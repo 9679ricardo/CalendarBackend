@@ -6,6 +6,8 @@ namespace Capa_Datos
 {
     public class SDB_Evento : IDB_Evento
     {
+        private readonly string con = "Persist Security Info=False;User ID=RicaradoRamirez_SQLLogin_1;Password=6kt7jf3p8m;Initial Catalog=CalendarApp;Server=CalendarApp.mssql.somee.com";
+
         public async Task<bool> BD_Editar_Evento(Evento evento)
         {
             SqlConnection cn = new();
@@ -13,7 +15,7 @@ namespace Capa_Datos
 
             try
             {
-                cn.ConnectionString = "Server=DESKTOP-7SCJT85;Database=Notas;Trusted_Connection=True;MultipleActiveResultSets=True";
+                cn.ConnectionString = con;
                 SqlCommand cmd = new("Sp_Editar_Nota", cn)
                 {
                     CommandTimeout = 20,
@@ -63,7 +65,7 @@ namespace Capa_Datos
 
             try
             {
-                cn.ConnectionString = "Server=DESKTOP-7SCJT85;Database=Notas;Trusted_Connection=True;MultipleActiveResultSets=True";
+                cn.ConnectionString = con;
 
                 SqlCommand cmd = new("Sp_Eliminar_Nota", cn)
                 {
@@ -111,7 +113,7 @@ namespace Capa_Datos
 
             try
             {
-                cn.ConnectionString = "Server=DESKTOP-7SCJT85;Database=Notas;Trusted_Connection=True;MultipleActiveResultSets=True";
+                cn.ConnectionString = con;
                 SqlDataAdapter da = new("Sp_Listar_Notas_Usuario", cn);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@idUsu", uid);
@@ -142,7 +144,7 @@ namespace Capa_Datos
 
             try
             {
-                cn.ConnectionString = "Server=DESKTOP-7SCJT85;Database=Notas;Trusted_Connection=True;MultipleActiveResultSets=True";
+                cn.ConnectionString = con;
 
                 SqlCommand cmd = new("Sp_Add_Nota", cn)
                 {
@@ -192,7 +194,7 @@ namespace Capa_Datos
 
             try
             {
-                cn.ConnectionString = "Server=DESKTOP-7SCJT85;Database=Notas;Trusted_Connection=True;MultipleActiveResultSets=True";
+                cn.ConnectionString = con;
                 SqlDataAdapter da = new("Sp_Buscar_Notas", cn);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@Id_Not", Id_Not);

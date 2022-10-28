@@ -20,7 +20,10 @@ builder.Services.AddCors(options =>
     options.AddPolicy(MyAllowSpecificOrigins,
         policy =>
         {
-            policy.WithOrigins("http://localhost:5173")
+            policy.WithOrigins("https://calendarapp-ricardo.netlify.app/")
+            .WithOrigins("https://calendarapp-ricardo.netlify.app")
+            .WithOrigins("http://localhost:5173/")
+            .WithOrigins("http://localhost:5173")
             .AllowAnyHeader()
             .AllowAnyMethod();
         });
