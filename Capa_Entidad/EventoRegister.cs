@@ -6,5 +6,6 @@
         public string Notes { get; set; }
         public string Start { get; set; }
         public string End { get; set; }
+        //public List<Guests> ListGuests { get; set; }
     }
 }

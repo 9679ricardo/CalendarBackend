@@ -50,7 +50,7 @@ namespace CalendarBackend.Controllers
                 var token = mTokenCreate.TokenCreate(uid, request.Name);
                 if (string.IsNullOrEmpty(token)) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: token" });
                 /** retornamos un nuevo objeto con la respuesta **/
-                return StatusCode(201, new { ok = true, uid, name = request.Name, token });
+                return StatusCode(201, new { ok = true, uid, name = request.Name, token, request.Email });
             }
             catch (Exception)
             {
@@ -80,7 +80,7 @@ namespace CalendarBackend.Controllers
                 var token = mTokenCreate.TokenCreate(login.uid, login.Name);
                 if (string.IsNullOrEmpty(token)) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: token" });
 
-                return StatusCode(201, new { ok = true, login.uid, name = login.Name, token });
+                return StatusCode(201, new { ok = true, login.uid, name = login.Name, token, request.Email });
             }
             catch
             {
@@ -108,5 +108,25 @@ namespace CalendarBackend.Controllers
                 return StatusCode(500, new { ok = false, msg = "Token no valido" });
             }
         }
+
+        [Authorize]
+        [HttpPost("/user")]
+        public async Task<ActionResult<Evento>> GetAsUsuario(string email)
+        {
+            try
+            {
+                var login = await mUsuario.NR_Login(email);
+                if (login == null) return StatusCode(500, new { ok = false, msg = "No existe un usuario con este correo" });
+                if (string.IsNullOrEmpty(login.Email)) return StatusCode(500, new { ok = false, msg = "No existe un usuario con este correo" });
+
+                return StatusCode(200, new { ok = true, login.Email, id = login.uid, login.Name });
+
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod6" });
+            }
+        }
+
     }
 }

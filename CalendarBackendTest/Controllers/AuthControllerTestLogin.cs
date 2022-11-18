@@ -3,13 +3,7 @@ using Capa_Entidad;
 using Capa_Negocio;
 using Capa_Validacion;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CalendarBackendTest.Controllers
 {

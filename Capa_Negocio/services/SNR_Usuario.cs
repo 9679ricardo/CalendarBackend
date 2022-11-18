@@ -32,7 +32,8 @@ namespace Capa_Negocio
                 {
                     uid = Convert.ToInt16(data.Rows[0]["Id_Usu"]),
                     Name = data.Rows[0]["name"].ToString(),
-                    Password = data.Rows[0]["password"].ToString()
+                    Password = data.Rows[0]["password"].ToString(),
+                    Email = email
                 };
 
                 return usuario;

@@ -23,13 +23,12 @@ namespace CalendarBackend.Controllers
         }
 
         [HttpGet("/events")]
-        public async Task<ActionResult<Evento>> GetAllEventosUsuario()
+        public async Task<ActionResult<EventoPart>> GetAllEventosUsuario()
         {
             try
             {
                 /** obtener id del usuario **/
-                ClaimsIdentity identity = HttpContext.User.Identity as ClaimsIdentity;
-                if (identity == null) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
+                if (HttpContext.User.Identity is not ClaimsIdentity identity) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
                 ClaimsIdent user = mTokenCreate.GetUser(identity.Claims);
                 if (user.Id_Usuario <= 0) StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
 
@@ -50,8 +49,7 @@ namespace CalendarBackend.Controllers
             try
             {
                 /** obtener id del usuario **/
-                ClaimsIdentity identity = HttpContext.User.Identity as ClaimsIdentity;
-                if (identity == null) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
+                if (HttpContext.User.Identity is not ClaimsIdentity identity) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
                 ClaimsIdent user = mTokenCreate.GetUser(identity.Claims);
                 if (user.Id_Usuario <= 0) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
 
@@ -64,8 +62,12 @@ namespace CalendarBackend.Controllers
                 /** registrar evento **/
                 int lastlast_insert = await mEvento.INR_Registrar_Evento(even);
                 if (lastlast_insert <= 0) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod8" });
-                 
                 even.Id = lastlast_insert;
+
+                /** Registrar relacion **/
+
+                int relac = await mEvento.INR_Registrar_Evento_Relacion(lastlast_insert, user.Id_Usuario);
+                if (relac <= 0) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod887" });
 
                 return StatusCode(201, new { ok = true, evento = even });
             }
@@ -81,8 +83,7 @@ namespace CalendarBackend.Controllers
             try
             {
                 /** obtener id del usuario **/
-                ClaimsIdentity identity = HttpContext.User.Identity as ClaimsIdentity;
-                if (identity == null) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
+                if (HttpContext.User.Identity is not ClaimsIdentity identity) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
                 ClaimsIdent user = mTokenCreate.GetUser(identity.Claims);
                 if (user.Id_Usuario <= 0) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
 
@@ -101,6 +102,7 @@ namespace CalendarBackend.Controllers
 
                 /** validamos que el usuario a modificar se el mismo que lo creo **/
                 if (DbProducto.UserUid != user.Id_Usuario) return StatusCode(500, new { ok = false, Request.Id, msg = "No tiene privilegio de editar este evento" });
+                if(DbProducto.IdCre != user.Id_Usuario) return StatusCode(500, new { ok = false, Request.Id, msg = "No tiene privilegio de editar este evento" });
 
                 env.UserUid = user.Id_Usuario;
                 env.User = user.Names;
@@ -123,7 +125,7 @@ namespace CalendarBackend.Controllers
             try
             {
                 /** obtener id del usuario **/
-                ClaimsIdentity identity = HttpContext.User.Identity as ClaimsIdentity;
+                if (HttpContext.User.Identity is not ClaimsIdentity identity) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
                 ClaimsIdent user = mTokenCreate.GetUser(identity.Claims);
                 if (user.Id_Usuario <= 0) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
 
@@ -137,10 +139,46 @@ namespace CalendarBackend.Controllers
 
                 /** validamos que el usuario a modificar se el mismo que lo creo **/
                 if (DbProducto.UserUid != user.Id_Usuario) return StatusCode(500, new { ok = false, msg = "No tiene privilegio de eliminar este evento" });
+                if (DbProducto.IdCre != user.Id_Usuario) return StatusCode(500, new { ok = false,  msg = "No tiene privilegio de eliminar este evento" });
+
+                /** eliminamos el evento relacion en la base de datos **/
+                var delR = await mEvento.INR_Eliminar_Evento_Usuario(Id);
+                if (delR != null) return StatusCode(500, delR);
 
                 /** eliminamos el evento en la base de datos **/
                 var del = await mEvento.INR_Eliminar_Evento(Id, user.Id_Usuario);
                 if (del != null) return StatusCode(500, del);
+
+                return StatusCode(201, new { ok = true });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod6" });
+            }
+        }
+
+        [HttpPut("/event/delete")]
+        public async Task<ActionResult<Notificacion>> DeleteRe([FromBody] Relacion Request)
+        {
+            try
+            {
+                /** obtener id del usuario **/
+                if (HttpContext.User.Identity is not ClaimsIdentity identity) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
+                ClaimsIdent user = mTokenCreate.GetUser(identity.Claims);
+                if (user.Id_Usuario <= 0) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
+
+                /** buscamos el evento **/
+                Evento DbProducto = await mEvento.INR_Buscar_Evento(Request.Id_Nota);
+                if (DbProducto == null) return StatusCode(500, new { ok = false, Request.Id_Nota, msg = "No existe una nota con ese id" });
+                if (DbProducto.Id <= 0) return StatusCode(500, new { ok = false, Request.Id_Nota, msg = "No existe una nota con ese id" });
+
+                /** validamos que el usuario a modificar se el mismo que lo creo **/
+                if (DbProducto.UserUid != user.Id_Usuario) return StatusCode(500, new { ok = false, Request.Id_User, msg = "No tiene privilegio de editar este evento" });
+                if (DbProducto.IdCre != user.Id_Usuario) return StatusCode(500, new { ok = false, Request.Id_User, msg = "No tiene privilegio de editar este evento" });
+
+                /** eliminamos el evento relacion en la base de datos **/
+                var delR = await mEvento.INR_Eliminar_Evento_Usuario_Relacion(DbProducto.Id, Request.Id_User);
+                if (delR != null) return StatusCode(500, delR);
 
                 return StatusCode(201, new { ok = true });
             }

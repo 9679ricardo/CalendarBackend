@@ -6,8 +6,9 @@ namespace Capa_Datos
 {
     public class SDB_Evento : IDB_Evento
     {
-        private readonly string con = "Persist Security Info=False;User ID=RicaradoRamirez_SQLLogin_1;Password=6kt7jf3p8m;Initial Catalog=CalendarApp;Server=CalendarApp.mssql.somee.com";
-
+        // private readonly string con = "Persist Security Info=False;User ID=RicaradoRamirez_SQLLogin_1;Password=6kt7jf3p8m;Initial Catalog=CalendarApp;Server=CalendarApp.mssql.somee.com";
+       // private readonly string con = "Data Source=SQL8003.site4now.net;Initial Catalog=db_a8ef72_calendarapp;User Id=db_a8ef72_calendarapp_admin;Password=##dbricardo12";
+        private readonly string con = "Server=;Database=Notas;Trusted_Connection=True;MultipleActiveResultSets=True";
         public async Task<bool> BD_Editar_Evento(Evento evento)
         {
             SqlConnection cn = new();
@@ -106,6 +107,53 @@ namespace Capa_Datos
             }
         }
 
+        public async Task<bool> BD_Eliminar_Evento_Usuario(int Id_Not)
+        {
+            SqlConnection cn = new();
+            bool respuesta = true;
+             
+            try
+            {
+                cn.ConnectionString = con;
+
+                SqlCommand cmd = new("Sp_Eliminar_Nota_Usuario", cn)
+                {
+                    CommandTimeout = 20,
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                cmd.Parameters.AddWithValue("@idNota", Id_Not);
+
+                await cn.OpenAsync();
+
+                int getValue = Convert.ToInt32(await cmd.ExecuteNonQueryAsync());
+
+                if (getValue > 0)
+                {
+                    respuesta = false;
+                }
+                else
+                {
+                    respuesta = true;
+                }
+
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+                cn.Close();
+
+                return respuesta;
+            }
+            catch (Exception)
+            {
+                if (cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+
+                return respuesta;
+            }
+        }
+
         public async Task<DataTable> DB_Mostar_Todos_Evento_Usuario(int uid)
         {
             SqlConnection cn = new();
@@ -114,7 +162,7 @@ namespace Capa_Datos
             try
             {
                 cn.ConnectionString = con;
-                SqlDataAdapter da = new("Sp_Listar_Notas_Usuario", cn);
+                SqlDataAdapter da = new("Sp_Notas_Usuario", cn);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@idUsu", uid);
 
@@ -158,7 +206,8 @@ namespace Capa_Datos
                 cmd.Parameters.AddWithValue("@notes", evento.Notes);
                 cmd.Parameters.AddWithValue("@start", evento.Start);
                 cmd.Parameters.AddWithValue("@end", evento.End);
-
+                cmd.Parameters.AddWithValue("@idCre", evento.IdCre);
+                
                 await cn.OpenAsync();
 
                 int getValue = Convert.ToInt32(await cmd.ExecuteScalarAsync());
@@ -215,6 +264,131 @@ namespace Capa_Datos
                 }
 
                 return data;
+            }
+        }
+
+        public async Task<int> BD_Registrar_Evento_Relacion(int Id_Even, int uid)
+        {
+            SqlConnection cn = new();
+
+            int respuesta;
+
+            try
+            {
+                cn.ConnectionString = con;
+
+                SqlCommand cmd = new("Sp_Add_Nota_Usuario", cn)
+                {
+                    CommandTimeout = 20,
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                cmd.Parameters.AddWithValue("@idUsu", uid);
+                cmd.Parameters.AddWithValue("@idNot", Id_Even);
+
+                await cn.OpenAsync();
+
+                int getValue = Convert.ToInt32(await cmd.ExecuteScalarAsync());
+
+                if (getValue > 0)
+                {
+                    respuesta = getValue;
+                }
+                else
+                {
+                    respuesta = 0;
+                }
+
+                cn.Close();
+
+                return respuesta;
+            }
+            catch (Exception)
+            {
+                if (cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+
+                return 0;
+            }
+        }
+
+        public async Task<DataTable> DB_Mostar_Todos_Usuarios_Evento(int Id_Even)
+        {
+            SqlConnection cn = new();
+            DataTable data = new();
+
+            try
+            {
+                cn.ConnectionString = con;
+                SqlDataAdapter da = new("Sp_Usuarios_Nota", cn);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idNot", Id_Even);
+
+                await cn.OpenAsync();
+
+                da.Fill(data);
+                cn.Close();
+                return data;
+
+            }
+            catch (Exception)
+            {
+                if (cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+
+                return data;
+            }
+        }
+
+        public async Task<bool> BD_Eliminar_Evento_Relacion(int Id_Even, int uid)
+        {
+            SqlConnection cn = new();
+            bool respuesta = true;
+
+            try
+            {
+                cn.ConnectionString = con;
+
+                SqlCommand cmd = new("Sp_Eliminar_Nota_Usuario_Uno", cn)
+                {
+                    CommandTimeout = 20,
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                cmd.Parameters.AddWithValue("@idNota", Id_Even);
+                cmd.Parameters.AddWithValue("@idUser", uid);
+
+                await cn.OpenAsync();
+
+                int getValue = Convert.ToInt32(await cmd.ExecuteNonQueryAsync());
+
+                if (getValue > 0)
+                {
+                    respuesta = false;
+                }
+                else
+                {
+                    respuesta = true;
+                }
+
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+                cn.Close();
+
+                return respuesta;
+            }
+            catch (Exception)
+            {
+                if (cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+
+                return respuesta;
             }
         }
     }

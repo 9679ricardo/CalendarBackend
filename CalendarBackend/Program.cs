@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Capa_Entidad;
+using CalendarBackend;
 
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
@@ -57,9 +58,12 @@ builder.Services.AddScoped<IValidarCampos, SValidarCampos>();
 builder.Services.AddScoped<IValidarUsuario, SValidarUsuario>();
 builder.Services.AddScoped<IValidarEvento, SValidarEvento>();
 builder.Services.AddScoped<INR_Evento, SNR_Evento>();
+builder.Services.AddScoped<IDB_Notificacion, SDB_Notificacion>();
+builder.Services.AddScoped<INR_Notificacion, SNR_Notificacion>();
+builder.Services.AddScoped<ISendEmail, SSendEmail>();
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.  
+// Configure the HTTP request pipeline.   
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

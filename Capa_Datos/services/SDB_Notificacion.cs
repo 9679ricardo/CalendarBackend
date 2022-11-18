@@ -1,45 +1,43 @@
-﻿using Capa_Entidad;
-using System.Data;
+﻿
+using Capa_Entidad;
 using System.Data.SqlClient;
-using System.Net.Sockets;
+using System.Data;
 
 namespace Capa_Datos
 {
-    public class SBD_Usuario : IBD_Usuario
+    public class SDB_Notificacion : IDB_Notificacion
     {
         private readonly string con = "Server=;Database=Notas;Trusted_Connection=True;MultipleActiveResultSets=True";
-        // private readonly string con = "Persist Security Info=False;User ID=RicaradoRamirez_SQLLogin_1;Password=6kt7jf3p8m;Initial Catalog=CalendarApp;Server=CalendarApp.mssql.somee.com";
-        //"Data Source=SQL8003.site4now.net;Initial Catalog=db_a8ef72_calendarapp;User Id=db_a8ef72_calendarapp_admin;Password=YOUR_DB_PASSWORD
-        public async Task<bool> BD_Buscar_Correo(string email)
+
+        public async Task<bool> BD_Eliminar_Notificacion(int Id_Not, int Id_Usu)
         {
             SqlConnection cn = new();
-
-            bool respuesta = false;
+            bool respuesta = true;
 
             try
             {
-
-                SqlCommand cmd = new();
-               // cn.ConnectionString = "Server=DESKTOP-7SCJT85;Database=Notas;Trusted_Connection=True;MultipleActiveResultSets=True";
                 cn.ConnectionString = con;
-                cmd.CommandText = "Sp_Validar_Correo";
-                cmd.Connection = cn;
-                cmd.CommandTimeout = 20;
-                cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@email", email);
+                SqlCommand cmd = new("Sp_Eliminar_Notificacion", cn)
+                {
+                    CommandTimeout = 20,
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                cmd.Parameters.AddWithValue("@idNoti", Id_Not);
+                cmd.Parameters.AddWithValue("@idUsu", Id_Usu);
 
                 await cn.OpenAsync();
 
-                int getValue = Convert.ToInt32(cmd.ExecuteScalar());
+                int getValue = Convert.ToInt32(await cmd.ExecuteNonQueryAsync());
 
                 if (getValue > 0)
                 {
-                    respuesta = true;
+                    respuesta = false;
                 }
                 else
                 {
-                    respuesta = false;
+                    respuesta = true;
                 }
 
                 cmd.Parameters.Clear();
@@ -50,7 +48,6 @@ namespace Capa_Datos
             }
             catch (Exception)
             {
-
                 if (cn.State == ConnectionState.Open)
                 {
                     cn.Close();
@@ -60,7 +57,7 @@ namespace Capa_Datos
             }
         }
 
-        public async Task<int> BD_Registrar_Usuario(UsuarioRegister usuario)
+        public async Task<int> BD_Registrar_Notificacion(NotificacionRegister notificacion)
         {
             SqlConnection cn = new();
 
@@ -70,14 +67,14 @@ namespace Capa_Datos
             {
                 SqlCommand cmd = new();
                 cn.ConnectionString = con;
-                cmd.CommandText = "Sp_Add_Usuario";
+                cmd.CommandText = "Sp_Add_Notificacion";
                 cmd.Connection = cn;
                 cmd.CommandTimeout = 20;
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@name", usuario.Name.Trim());
-                cmd.Parameters.AddWithValue("@password", usuario.Password.Trim());
-                cmd.Parameters.AddWithValue("@email", usuario.Email.Trim());
+                cmd.Parameters.AddWithValue("@idUsu", notificacion.Id_Usu);
+                cmd.Parameters.AddWithValue("@idNot", notificacion.Id_Nota);
+                cmd.Parameters.AddWithValue("@idCre", notificacion.Id_Cree);
 
                 await cn.OpenAsync();
 
@@ -110,7 +107,7 @@ namespace Capa_Datos
             return respuesta;
         }
 
-        public async Task<DataTable> DB_Login(string email)
+        public async Task<DataTable> DB_Mostar_Todas_Notificacion_Usuario(int Id_Usu)
         {
             SqlConnection cn = new();
             DataTable data = new();
@@ -118,14 +115,15 @@ namespace Capa_Datos
             try
             {
                 cn.ConnectionString = con;
-                SqlDataAdapter da = new("Sp_Usuario_Login", cn);
+                SqlDataAdapter da = new("Sp_Listar_Notificaciones", cn);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@Email", email);
+                da.SelectCommand.Parameters.AddWithValue("@idUsu", Id_Usu);
 
                 await cn.OpenAsync();
-              
+
                 da.Fill(data);
                 cn.Close();
+
                 return data;
 
             }
