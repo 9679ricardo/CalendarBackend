@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>CalendarBackend</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>e49694a7-9b46-4ee9-a11a-f61f54eebf42</ProjectGuid>
+  <FullPath>E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\CalendarBackend.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="E:\visual\ricardo\Backend-C#\CalendarBackend\.sonarqube\conf\10\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">E:\visual\ricardo\Backend-C#\CalendarBackend\.sonarqube\out\10\Issues.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPaths">E:\visual\ricardo\Backend-C#\CalendarBackend\.sonarqube\out\10</Property>
+  </AnalysisSettings>
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+  <TargetFramework>net6.0</TargetFramework>
+</ProjectInfo>

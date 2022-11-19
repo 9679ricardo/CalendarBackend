@@ -1,5 +1,4 @@
-﻿
-namespace Capa_Validacion
+﻿namespace Capa_Validacion
 {
     public interface IValidarCampos
     {

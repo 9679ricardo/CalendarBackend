@@ -1,5 +1,4 @@
-﻿
-using Capa_Entidad;
+﻿using Capa_Entidad;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -7,6 +6,7 @@ namespace Capa_Datos
 {
     public class SDB_Notificacion : IDB_Notificacion
     {
+        
         private readonly string con = "Server=;Database=Notas;Trusted_Connection=True;MultipleActiveResultSets=True";
 
         public async Task<bool> BD_Eliminar_Notificacion(int Id_Not, int Id_Usu)

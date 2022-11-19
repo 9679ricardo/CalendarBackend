@@ -1,0 +1,10 @@
+Z
+QE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\interfaces\IBD_Usuario.csutf-8Y
+PE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\interfaces\IDB_Evento.csutf-8_
+VE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\interfaces\IDB_Notificacion.csutf-8X
+OE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\services\SBD_Usuario.csutf-8W
+NE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\services\SDB_Evento.csutf-8]
+TE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\services\SDB_Notificacion.csutf-8p
+eE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\obj\Debug\net6.0\Capa_Datos.GlobalUsings.g.csutf-8‚
+wE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.csutf-8n
+cE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\obj\Debug\net6.0\Capa_Datos.AssemblyInfo.csutf-8

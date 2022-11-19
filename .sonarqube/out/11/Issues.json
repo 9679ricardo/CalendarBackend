@@ -1,0 +1,1568 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilador de Microsoft (R) Visual C#",
+        "version": "4.3.0.0",
+        "fileVersion": "4.3.0-3.22415.1 (8301d484)",
+        "semanticVersion": "4.3.0",
+        "language": "es-MX"
+      },
+      "results": [
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/NotificationControllerTest.cs",
+                "region": {
+                  "startLine": 42,
+                  "startColumn": 57,
+                  "endLine": 42,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/NotificationControllerTest.cs",
+                "region": {
+                  "startLine": 42,
+                  "startColumn": 100,
+                  "endLine": 42,
+                  "endColumn": 104
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/NotificationControllerTest.cs",
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 25,
+                  "endLine": 57,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerRegisterTest.cs",
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 25,
+                  "endLine": 43,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestLogin.cs",
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 25,
+                  "endLine": 43,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestRenew.cs",
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 25,
+                  "endLine": 55,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "El método asincrónico carece de operadores \"await\" y se ejecutará de forma sincrónica. Puede usar el operador 'await' para esperar llamadas API que no sean de bloqueo o 'await Task.Run(...)' para hacer tareas enlazadas a la CPU en un subproceso en segundo plano.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestRenew.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 27,
+                  "endLine": 15,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestRenew.cs",
+                "region": {
+                  "startLine": 99,
+                  "startColumn": 25,
+                  "endLine": 99,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "El método asincrónico carece de operadores \"await\" y se ejecutará de forma sincrónica. Puede usar el operador 'await' para esperar llamadas API que no sean de bloqueo o 'await Task.Run(...)' para hacer tareas enlazadas a la CPU en un subproceso en segundo plano.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestRenew.cs",
+                "region": {
+                  "startLine": 59,
+                  "startColumn": 27,
+                  "endLine": 59,
+                  "endColumn": 52
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/EventoControllerTest.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 51,
+                  "endLine": 32,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/EventoControllerTest.cs",
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 25,
+                  "endLine": 47,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/NotificationControllerTest.cs",
+                "region": {
+                  "startLine": 93,
+                  "startColumn": 25,
+                  "endLine": 93,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/NotificationControllerTest.cs",
+                "region": {
+                  "startLine": 108,
+                  "startColumn": 110,
+                  "endLine": 108,
+                  "endColumn": 114
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/NotificationControllerTest.cs",
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 25,
+                  "endLine": 123,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerRegisterTest.cs",
+                "region": {
+                  "startLine": 79,
+                  "startColumn": 25,
+                  "endLine": 79,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerRegisterTest.cs",
+                "region": {
+                  "startLine": 80,
+                  "startColumn": 34,
+                  "endLine": 80,
+                  "endColumn": 65
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestLogin.cs",
+                "region": {
+                  "startLine": 78,
+                  "startColumn": 25,
+                  "endLine": 78,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestLogin.cs",
+                "region": {
+                  "startLine": 79,
+                  "startColumn": 34,
+                  "endLine": 79,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/EventoControllerTest.cs",
+                "region": {
+                  "startLine": 115,
+                  "startColumn": 25,
+                  "endLine": 115,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestLogin.cs",
+                "region": {
+                  "startLine": 115,
+                  "startColumn": 25,
+                  "endLine": 115,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestLogin.cs",
+                "region": {
+                  "startLine": 116,
+                  "startColumn": 34,
+                  "endLine": 116,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/NotificationControllerTest.cs",
+                "region": {
+                  "startLine": 157,
+                  "startColumn": 57,
+                  "endLine": 157,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/NotificationControllerTest.cs",
+                "region": {
+                  "startLine": 157,
+                  "startColumn": 100,
+                  "endLine": 157,
+                  "endColumn": 104
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/NotificationControllerTest.cs",
+                "region": {
+                  "startLine": 172,
+                  "startColumn": 25,
+                  "endLine": 172,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerRegisterTest.cs",
+                "region": {
+                  "startLine": 113,
+                  "startColumn": 25,
+                  "endLine": 113,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerRegisterTest.cs",
+                "region": {
+                  "startLine": 114,
+                  "startColumn": 34,
+                  "endLine": 114,
+                  "endColumn": 65
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/NotificationControllerTest.cs",
+                "region": {
+                  "startLine": 219,
+                  "startColumn": 57,
+                  "endLine": 219,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/NotificationControllerTest.cs",
+                "region": {
+                  "startLine": 234,
+                  "startColumn": 25,
+                  "endLine": 234,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestLogin.cs",
+                "region": {
+                  "startLine": 151,
+                  "startColumn": 25,
+                  "endLine": 151,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerRegisterTest.cs",
+                "region": {
+                  "startLine": 146,
+                  "startColumn": 25,
+                  "endLine": 146,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerRegisterTest.cs",
+                "region": {
+                  "startLine": 147,
+                  "startColumn": 34,
+                  "endLine": 147,
+                  "endColumn": 65
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/EventoControllerTest.cs",
+                "region": {
+                  "startLine": 156,
+                  "startColumn": 25,
+                  "endLine": 156,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/EventoControllerTest.cs",
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 25,
+                  "endLine": 189,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerRegisterTest.cs",
+                "region": {
+                  "startLine": 180,
+                  "startColumn": 25,
+                  "endLine": 180,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerRegisterTest.cs",
+                "region": {
+                  "startLine": 181,
+                  "startColumn": 34,
+                  "endLine": 181,
+                  "endColumn": 65
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestLogin.cs",
+                "region": {
+                  "startLine": 185,
+                  "startColumn": 25,
+                  "endLine": 185,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/EventoControllerTest.cs",
+                "region": {
+                  "startLine": 250,
+                  "startColumn": 25,
+                  "endLine": 250,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Desreferencia de una referencia posiblemente NULL.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/EventoControllerTest.cs",
+                "region": {
+                  "startLine": 315,
+                  "startColumn": 25,
+                  "endLine": 315,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/NotificationControllerTest.cs",
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 13,
+                  "endLine": 54,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerRegisterTest.cs",
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 13,
+                  "endLine": 41,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestLogin.cs",
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 13,
+                  "endLine": 41,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestRenew.cs",
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 13,
+                  "endLine": 53,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestRenew.cs",
+                "region": {
+                  "startLine": 97,
+                  "startColumn": 13,
+                  "endLine": 97,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/EventoControllerTest.cs",
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 13,
+                  "endLine": 44,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/NotificationControllerTest.cs",
+                "region": {
+                  "startLine": 120,
+                  "startColumn": 13,
+                  "endLine": 120,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerRegisterTest.cs",
+                "region": {
+                  "startLine": 77,
+                  "startColumn": 13,
+                  "endLine": 77,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2005",
+          "level": "warning",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerRegisterTest.cs",
+                "region": {
+                  "startLine": 80,
+                  "startColumn": 13,
+                  "endLine": 80,
+                  "endColumn": 73
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "AreEqual"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestLogin.cs",
+                "region": {
+                  "startLine": 76,
+                  "startColumn": 13,
+                  "endLine": 76,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2005",
+          "level": "warning",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestLogin.cs",
+                "region": {
+                  "startLine": 79,
+                  "startColumn": 13,
+                  "endLine": 79,
+                  "endColumn": 70
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "AreEqual"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/EventoControllerTest.cs",
+                "region": {
+                  "startLine": 112,
+                  "startColumn": 13,
+                  "endLine": 112,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestLogin.cs",
+                "region": {
+                  "startLine": 113,
+                  "startColumn": 13,
+                  "endLine": 113,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2005",
+          "level": "warning",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestLogin.cs",
+                "region": {
+                  "startLine": 116,
+                  "startColumn": 13,
+                  "endLine": 116,
+                  "endColumn": 70
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "AreEqual"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/NotificationControllerTest.cs",
+                "region": {
+                  "startLine": 169,
+                  "startColumn": 13,
+                  "endLine": 169,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2005",
+          "level": "warning",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerRegisterTest.cs",
+                "region": {
+                  "startLine": 114,
+                  "startColumn": 13,
+                  "endLine": 114,
+                  "endColumn": 73
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "AreEqual"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/NotificationControllerTest.cs",
+                "region": {
+                  "startLine": 231,
+                  "startColumn": 13,
+                  "endLine": 231,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2005",
+          "level": "warning",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerRegisterTest.cs",
+                "region": {
+                  "startLine": 147,
+                  "startColumn": 13,
+                  "endLine": 147,
+                  "endColumn": 73
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "AreEqual"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestLogin.cs",
+                "region": {
+                  "startLine": 149,
+                  "startColumn": 13,
+                  "endLine": 149,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/EventoControllerTest.cs",
+                "region": {
+                  "startLine": 186,
+                  "startColumn": 13,
+                  "endLine": 186,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2005",
+          "level": "warning",
+          "message": "Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerRegisterTest.cs",
+                "region": {
+                  "startLine": 181,
+                  "startColumn": 13,
+                  "endLine": 181,
+                  "endColumn": 73
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "AreEqual"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/AuthControllerTestLogin.cs",
+                "region": {
+                  "startLine": 183,
+                  "startColumn": 13,
+                  "endLine": 183,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/EventoControllerTest.cs",
+                "region": {
+                  "startLine": 247,
+                  "startColumn": 13,
+                  "endLine": 247,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        },
+        {
+          "ruleId": "NUnit2019",
+          "level": "note",
+          "message": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/CalendarBackendTest/Controllers/EventoControllerTest.cs",
+                "region": {
+                  "startLine": 312,
+                  "startColumn": 13,
+                  "endLine": 312,
+                  "endColumn": 44
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "HasToleranceValue": "False",
+              "IsGenericMethod": "False",
+              "ModelName": "IsNotNull"
+            }
+          }
+        }
+      ],
+      "rules": {
+        "CS1998": {
+          "id": "CS1998",
+          "shortDescription": "El método asincrónico carece de operadores \"await\" y se ejecutará de forma sincrónica",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1998)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8602": {
+          "id": "CS8602",
+          "shortDescription": "Desreferencia de una referencia posiblemente NULL.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8602)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8625": {
+          "id": "CS8625",
+          "shortDescription": "No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8625)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "NUnit2005": {
+          "id": "NUnit2005",
+          "shortDescription": "Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)",
+          "fullDescription": "Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual).",
+          "defaultLevel": "warning",
+          "helpUri": "https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md",
+          "properties": {
+            "category": "Assertion",
+            "isEnabledByDefault": true
+          }
+        },
+        "NUnit2019": {
+          "id": "NUnit2019",
+          "shortDescription": "Consider using Assert.That(expr, Is.Not.Null) instead of Assert.IsNotNull(expr)",
+          "fullDescription": "Consider using the constraint model, Assert.That(expr, Is.Not.Null), instead of the classic model, Assert.IsNotNull(expr).",
+          "defaultLevel": "note",
+          "helpUri": "https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2019.md",
+          "properties": {
+            "category": "Assertion",
+            "isEnabledByDefault": true
+          }
+        }
+      }
+    }
+  ]
+}

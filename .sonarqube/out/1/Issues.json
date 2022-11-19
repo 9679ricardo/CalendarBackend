@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilador de Microsoft (R) Visual C#",
+        "version": "4.3.0.0",
+        "fileVersion": "4.3.0-3.22415.1 (8301d484)",
+        "semanticVersion": "4.3.0",
+        "language": "es-MX"
+      },
+      "results": [
+        {
+          "ruleId": "CS8603",
+          "level": "warning",
+          "message": "Posible tipo de valor devuelto de referencia nulo.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/Capa_Validacion/services/SValidarUsuario.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 20,
+                  "endLine": 18,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8603",
+          "level": "warning",
+          "message": "Posible tipo de valor devuelto de referencia nulo.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/Capa_Validacion/services/SValidarUsuario.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 20,
+                  "endLine": 29,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8603",
+          "level": "warning",
+          "message": "Posible tipo de valor devuelto de referencia nulo.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/Capa_Validacion/services/SValidarEvento.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 20,
+                  "endLine": 11,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8603",
+          "level": "warning",
+          "message": "Posible tipo de valor devuelto de referencia nulo.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/visual/ricardo/Backend-C%23/CalendarBackend/Capa_Validacion/services/SValidarEvento.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 20,
+                  "endLine": 19,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CS8603": {
+          "id": "CS8603",
+          "shortDescription": "Posible tipo de valor devuelto de referencia nulo",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8603)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

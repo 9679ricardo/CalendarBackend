@@ -1,15 +1,13 @@
 ﻿using Capa_Entidad;
 using System.Data;
 using System.Data.SqlClient;
-using System.Net.Sockets;
 
 namespace Capa_Datos
 {
     public class SBD_Usuario : IBD_Usuario
     {
         private readonly string con = "Server=;Database=Notas;Trusted_Connection=True;MultipleActiveResultSets=True";
-        // private readonly string con = "Persist Security Info=False;User ID=RicaradoRamirez_SQLLogin_1;Password=6kt7jf3p8m;Initial Catalog=CalendarApp;Server=CalendarApp.mssql.somee.com";
-        //"Data Source=SQL8003.site4now.net;Initial Catalog=db_a8ef72_calendarapp;User Id=db_a8ef72_calendarapp_admin;Password=YOUR_DB_PASSWORD
+
         public async Task<bool> BD_Buscar_Correo(string email)
         {
             SqlConnection cn = new();
@@ -20,7 +18,6 @@ namespace Capa_Datos
             {
 
                 SqlCommand cmd = new();
-               // cn.ConnectionString = "Server=DESKTOP-7SCJT85;Database=Notas;Trusted_Connection=True;MultipleActiveResultSets=True";
                 cn.ConnectionString = con;
                 cmd.CommandText = "Sp_Validar_Correo";
                 cmd.Connection = cn;

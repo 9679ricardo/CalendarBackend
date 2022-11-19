@@ -31,11 +31,11 @@ namespace CalendarBackend.Controllers
             {
                 /** validar usuario **/
                 var validar = mVUsuario.ValidarUsuario(request);
-                if (validar != null) return StatusCode(500, validar);
+                if (!validar.Ok) return StatusCode(500, validar);
 
                 /** validar que en la base de datos no exista el correo a registrar **/
                 var respuesta = await mUsuario.NR_Buscar_CorreoS(request.Email);
-                if (respuesta != null) return StatusCode(500, respuesta);
+                if (!respuesta.Ok) return StatusCode(500, respuesta);
 
                 /** encriptación de contraseña **/
                 string hsp = mCreateHash.CreatePasswordEncrypt(request.Password);
@@ -65,7 +65,7 @@ namespace CalendarBackend.Controllers
             {
                 /** validar login **/
                 var validar = mVUsuario.ValidarLogin(request);
-                if (validar != null) return StatusCode(500, validar);
+                if (!validar.Ok) return StatusCode(500, validar);
 
                 /** consultamos en la base de datos si existe el email **/
                 var login = await mUsuario.NR_Login(request.Email);
@@ -95,8 +95,7 @@ namespace CalendarBackend.Controllers
         {
             try
             {
-                ClaimsIdentity identity = HttpContext.User.Identity as ClaimsIdentity;
-
+                if (HttpContext.User.Identity is not ClaimsIdentity identity) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
                 ClaimsIdent renew = mTokenCreate.ValidarToken(token, identity.Claims);
                 if (renew == null) return StatusCode(500, new { ok = false, msg = "Token no valido" });
                 if (string.IsNullOrEmpty(renew.Token)) return StatusCode(500, new { ok = false, msg = "Token no valido" });

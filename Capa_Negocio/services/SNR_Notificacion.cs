@@ -46,13 +46,19 @@ namespace Capa_Negocio
                 {
                     foreach (DataRow row in eventos.Rows)
                     {
+                        var email = row["email"].ToString();
+                        if (string.IsNullOrEmpty(email)) break;
+
+                        var name = row["name"].ToString();
+                        if (string.IsNullOrEmpty(name)) break;
+
                         Notificacion not = new()
                         {
                             Id_Not = Convert.ToInt16(row["Id_Noti"].ToString()),
-                            Email = row["email"].ToString(),
+                            Email = email,
                             Id_Nota = Convert.ToInt16(row["Id_Nota"].ToString()),
                             Id_Usu = Convert.ToInt16(row["Id_Usu"].ToString()),
-                            Name = row["name"].ToString()
+                            Name = name
                         };
 
                         list.Add(not);

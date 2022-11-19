@@ -1,0 +1,16 @@
+﻿E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackendTest\Controllers\AuthControllerRegisterTest.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackendTest\Controllers\AuthControllerTestLogin.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackendTest\Controllers\AuthControllerTestRenew.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackendTest\Controllers\EventoControllerTest.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackendTest\Controllers\NotificationControllerTest.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackendTest\Usings.cs
+C:\Users\ander\.nuget\packages\microsoft.net.test.sdk\17.1.0\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.Program.cs
+C:\Users\ander\.nuget\packages\microsoft.testplatform.testhost\17.1.0\build\netcoreapp2.1\x64\testhost.exe
+C:\Users\ander\.nuget\packages\microsoft.testplatform.testhost\17.1.0\build\netcoreapp2.1\x64\testhost.dll
+C:\Users\ander\.nuget\packages\microsoft.testplatform.testhost\17.1.0\build\netcoreapp2.1\x64\Microsoft.TestPlatform.PlatformAbstractions.dll
+C:\Users\ander\.nuget\packages\nunit3testadapter\4.2.1\build\netcoreapp2.1\NUnit3.TestAdapter.dll
+C:\Users\ander\.nuget\packages\nunit3testadapter\4.2.1\build\netcoreapp2.1\NUnit3.TestAdapter.pdb
+C:\Users\ander\.nuget\packages\nunit3testadapter\4.2.1\build\netcoreapp2.1\nunit.engine.dll
+C:\Users\ander\.nuget\packages\nunit3testadapter\4.2.1\build\netcoreapp2.1\nunit.engine.api.dll
+C:\Users\ander\.nuget\packages\nunit3testadapter\4.2.1\build\netcoreapp2.1\nunit.engine.core.dll
+C:\Users\ander\.nuget\packages\nunit3testadapter\4.2.1\build\netcoreapp2.1\testcentric.engine.metadata.dll

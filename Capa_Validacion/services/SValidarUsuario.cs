@@ -10,23 +10,23 @@ namespace Capa_Validacion
             this.mValidarCampos = mValidarCampos;
         }
 
-        public object ValidarLogin(UsuarioLogin usuario)
+        public Resp ValidarLogin(UsuarioLogin usuario)
         {
-            if (mValidarCampos.ValidarEmail(usuario.Email)) return new { ok = false, msg = "Ingrese un correo valido" };
-            if (string.IsNullOrEmpty(usuario.Password)) return new { ok = false, msg = "Ingrese un contraseña valida" };
+            if (mValidarCampos.ValidarEmail(usuario.Email)) return new() { Ok = false, msg = "Ingrese un correo valido" };
+            if (string.IsNullOrEmpty(usuario.Password)) return new() { Ok = false, msg = "Ingrese un contraseña valida" };
 
-            return null;
+            return new Resp() { Ok = true };
         }
 
-        public object ValidarUsuario(UsuarioRegister usuario)
+        public Resp ValidarUsuario(UsuarioRegister usuario)
         {
-            if (string.IsNullOrEmpty(usuario.Name)) return new { ok = false, msg = "El nombre es obligatorio" };
+            if (string.IsNullOrEmpty(usuario.Name)) return new() { Ok = false, msg = "El nombre es obligatorio" };
 
-            if (usuario.Password.Length < 6) return new { ok = false, msg = "La contraseña debe de ser de 6 caracteres" };
+            if (usuario.Password.Length < 6) return new() { Ok = false, msg = "La contraseña debe de ser de 6 caracteres" };
 
-            if (mValidarCampos.ValidarEmail(usuario.Email)) return new { ok = false, msg = "Ingrese un correo valido" };
+            if (mValidarCampos.ValidarEmail(usuario.Email)) return new() { Ok = false, msg = "Ingrese un correo valido" };
 
-            return null;
+            return new() { Ok = true };
         }
     }
 }

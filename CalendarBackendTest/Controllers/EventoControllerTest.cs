@@ -17,6 +17,7 @@ namespace CalendarBackendTest.Controllers
         {
             var IEvento = new Mock<INR_Evento> ();
             var IToken = new Mock<ITokenCreate>();
+            var IVent = new Mock<IValidarEvento>();
 
             var principal = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>()
             {
@@ -29,7 +30,7 @@ namespace CalendarBackendTest.Controllers
             IToken.Setup(p => p.GetUser(principal.Claims)).Returns(new ClaimsIdent() { Id_Usuario = 1, Names = "Ricardo" });
             IEvento.Setup(p => p.INR_Mostar_Todos_Evento_Usuario(1)).ReturnsAsync(new List<EventoPart>());
 
-            var controller = new EventoController(null, IEvento.Object, IToken.Object)
+            var controller = new EventoController(IVent.Object, IEvento.Object, IToken.Object)
             {
                 ControllerContext = new ControllerContext()
                 {
@@ -93,7 +94,7 @@ namespace CalendarBackendTest.Controllers
 
             IToken.Setup(p => p.GetUser(principal.Claims)).Returns(ident);
             IEvento.Setup(p => p.RegisterData(ident, register)).Returns(evento);
-            validate.Setup(p => p.ValidarEvento(evento)).Returns(null);
+            validate.Setup(p => p.ValidarEvento(evento)).Returns(new Resp() { Ok = true });
             IEvento.Setup(p => p.INR_Registrar_Evento(evento)).ReturnsAsync(1);
             IEvento.Setup(p => p.INR_Registrar_Evento_Relacion(evento.Id, ident.Id_Usuario)).ReturnsAsync(1);
 
@@ -121,7 +122,7 @@ namespace CalendarBackendTest.Controllers
             var IEvento = new Mock<INR_Evento>();
             var IToken = new Mock<ITokenCreate>();
             var validate = new Mock<IValidarEvento>();
-            
+
             var identity = new ClaimsIdentity();
             identity.AddClaims(new List<Claim>()
             {
@@ -144,7 +145,7 @@ namespace CalendarBackendTest.Controllers
 
             Evento evento = new()
             {
-                
+
                 Id = 1,
                 Title = "evento 1",
                 Notes = "descrip 1",
@@ -153,7 +154,7 @@ namespace CalendarBackendTest.Controllers
                 User = "Ricardo",
                 UserUid = 1,
                 IdCre = 1,
-                State = null,
+                State = "Active",
             };
 
             ClaimsIdent ident = new()
@@ -162,14 +163,13 @@ namespace CalendarBackendTest.Controllers
                 Names = "Ricardo",
                 Token = "token"
             };
-             
+
             IToken.Setup(p => p.GetUser(principal.Claims)).Returns(ident);
             IEvento.Setup(p => p.UpdateData(ident, update)).Returns(evento);
-            validate.Setup(p => p.ValidarEvento(evento)).Returns(null);
-            validate.Setup(p => p.ValidarEventoId(1)).Returns(null);
-
+            validate.Setup(p => p.ValidarEvento(evento)).Returns(new Resp() { Ok = true });
+            validate.Setup(p => p.ValidarEventoId(1)).Returns(new Resp() { Ok = true });
             IEvento.Setup(p => p.INR_Buscar_Evento(1)).ReturnsAsync(evento);
-            IEvento.Setup(p => p.INR_Editar_Evento(evento)).ReturnsAsync(null);
+            IEvento.Setup(p => p.INR_Editar_Evento(evento)).ReturnsAsync(new Resp() { Ok = true });
 
             var controller = new EventoController(validate.Object, IEvento.Object, IToken.Object)
             {
@@ -227,10 +227,10 @@ namespace CalendarBackendTest.Controllers
             };
 
             IToken.Setup(p => p.GetUser(principal.Claims)).Returns(ident);
-            validate.Setup(p => p.ValidarEventoId(1)).Returns(null);
+            validate.Setup(p => p.ValidarEventoId(1)).Returns(new Resp() { Ok = true });
             IEvento.Setup(p => p.INR_Buscar_Evento(1)).ReturnsAsync(evento);
-            IEvento.Setup(r => r.INR_Eliminar_Evento_Usuario(1)).ReturnsAsync(null);
-            IEvento.Setup(p => p.INR_Eliminar_Evento(1,1)).ReturnsAsync(null);
+            IEvento.Setup(r => r.INR_Eliminar_Evento_Usuario(1)).ReturnsAsync(new Resp() { Ok = true });
+            IEvento.Setup(p => p.INR_Eliminar_Evento(1, 1)).ReturnsAsync(new Resp() { Ok = true });
 
             var controller = new EventoController(validate.Object, IEvento.Object, IToken.Object)
             {
@@ -295,7 +295,7 @@ namespace CalendarBackendTest.Controllers
 
             IToken.Setup(p => p.GetUser(principal.Claims)).Returns(ident);
             IEvento.Setup(p => p.INR_Buscar_Evento(1)).ReturnsAsync(evento);
-            IEvento.Setup(r => r.INR_Eliminar_Evento_Usuario_Relacion(evento.Id,ident.Id_Usuario)).ReturnsAsync(null);
+            IEvento.Setup(r => r.INR_Eliminar_Evento_Usuario_Relacion(evento.Id, ident.Id_Usuario)).ReturnsAsync(new Resp() { Ok = true });
 
             var controller = new EventoController(validate.Object, IEvento.Object, IToken.Object)
             {

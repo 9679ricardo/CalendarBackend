@@ -57,7 +57,7 @@ namespace CalendarBackend.Controllers
 
                 /** validar evento **/
                 var validar = mVEvento.ValidarEvento(even);
-                if (validar != null) return StatusCode(500, validar);
+                if (!validar.Ok) return StatusCode(500, validar);
 
                 /** registrar evento **/
                 int lastlast_insert = await mEvento.INR_Registrar_Evento(even);
@@ -91,9 +91,9 @@ namespace CalendarBackend.Controllers
 
                 /** validar evento **/
                 var validar = mVEvento.ValidarEvento(env);
-                if (validar != null) return StatusCode(500, validar);
+                if (!validar.Ok) return StatusCode(500, validar);
                 var val = mVEvento.ValidarEventoId(Request.Id);
-                if (val != null) return StatusCode(500, val);
+                if (!val.Ok) return StatusCode(500, val);
 
                 /** buscamos el evento **/
                 Evento DbProducto = await mEvento.INR_Buscar_Evento(Request.Id);
@@ -109,7 +109,7 @@ namespace CalendarBackend.Controllers
 
                 /** editamos el evento en la base de datos **/
                 var up = await mEvento.INR_Editar_Evento(env);
-                if (up != null) return StatusCode(500, up);
+                if (!up.Ok) return StatusCode(500, up);
                 
                 return StatusCode(201, new { ok = true, evento = env });
             }
@@ -130,7 +130,7 @@ namespace CalendarBackend.Controllers
                 if (user.Id_Usuario <= 0) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
 
                 var val = mVEvento.ValidarEventoId(Id);
-                if (val != null) return StatusCode(500, val);
+                if (!val.Ok) return StatusCode(500, val);
 
                 /** buscamos el evento **/
                 Evento DbProducto = await mEvento.INR_Buscar_Evento(Id);
@@ -143,11 +143,11 @@ namespace CalendarBackend.Controllers
 
                 /** eliminamos el evento relacion en la base de datos **/
                 var delR = await mEvento.INR_Eliminar_Evento_Usuario(Id);
-                if (delR != null) return StatusCode(500, delR);
+                if (!delR.Ok) return StatusCode(500, delR);
 
                 /** eliminamos el evento en la base de datos **/
                 var del = await mEvento.INR_Eliminar_Evento(Id, user.Id_Usuario);
-                if (del != null) return StatusCode(500, del);
+                if (!del.Ok) return StatusCode(500, del);
 
                 return StatusCode(201, new { ok = true });
             }
@@ -178,7 +178,7 @@ namespace CalendarBackend.Controllers
 
                 /** eliminamos el evento relacion en la base de datos **/
                 var delR = await mEvento.INR_Eliminar_Evento_Usuario_Relacion(DbProducto.Id, Request.Id_User);
-                if (delR != null) return StatusCode(500, delR);
+                if (!delR.Ok) return StatusCode(500, delR);
 
                 return StatusCode(201, new { ok = true });
             }

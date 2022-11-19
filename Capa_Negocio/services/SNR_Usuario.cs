@@ -13,13 +13,13 @@ namespace Capa_Negocio
             this.mUsuario = mUsuario;
         }
 
-        public async Task<object> NR_Buscar_CorreoS(string email)
+        public async Task<Resp> NR_Buscar_CorreoS(string email)
         {
             var resp = await mUsuario.BD_Buscar_Correo(email); //debe retornar falso
 
-            if (resp) return new { ok = false, msg = "El correo ya esta registrado" };
+            if (resp) return new() { Ok = false, msg = "El correo ya esta registrado" };
 
-            return null;
+            return new Resp() { Ok = true };
         }
 
         public async Task<Usuario> NR_Login(string email)
@@ -28,23 +28,29 @@ namespace Capa_Negocio
 
             if (data.Rows.Count > 0)
             {
+                var name = data.Rows[0]["name"].ToString();
+                if (string.IsNullOrEmpty(name)) return new();
+
+                var password = data.Rows[0]["password"].ToString();
+                if (string.IsNullOrEmpty(password)) return new();
+
                 Usuario usuario = new()
                 {
                     uid = Convert.ToInt16(data.Rows[0]["Id_Usu"]),
-                    Name = data.Rows[0]["name"].ToString(),
-                    Password = data.Rows[0]["password"].ToString(),
+                    Name = name,
+                    Password = password,
                     Email = email
                 };
 
                 return usuario;
             }
 
-            return new Usuario();
+            return new();
         }
 
         public async Task<int> NR_Registrar_Usuario(UsuarioRegister usuario)
         {
-            return await mUsuario.BD_Registrar_Usuario(usuario); // tiene que devolver mayor que cero;
+            return await mUsuario.BD_Registrar_Usuario(usuario);
         }
     }
 }

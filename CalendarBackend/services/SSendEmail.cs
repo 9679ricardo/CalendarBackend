@@ -22,7 +22,7 @@ namespace CalendarBackend
                 message.Body = $"<html>" +
                     $"<body> " +
                     $"el usuario {email} te ha invitado a unirte a un evento, Ingresa a Calendar App para mas detalles " +
-                    $"</body> <br/> <a href=\"http://localhost:5173/\">Calendar App</a> <br/> " +
+                    $"</body> <br/> <a href=\"https://calendarapp-ricardo.netlify.app/\">Calendar App</a> <br/> " +
                     $"</html>";
 
                 message.IsBodyHtml = true;

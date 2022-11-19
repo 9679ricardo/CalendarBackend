@@ -22,7 +22,7 @@ namespace CalendarBackendTest.Controllers
             Usuario loginOk = new() { Email  = "ricardo@gmail.com", Name = "Ricardo", uid = 1, Password = "password123" };
 
             var IVali = new Mock<IValidarUsuario>();
-            IVali.Setup(v => v.ValidarLogin(request)).Returns(null);
+            IVali.Setup(v => v.ValidarLogin(request)).Returns(new Resp() { Ok = true });
 
             var Iuser = new Mock<INR_Usuario>();
             Iuser.Setup(u => u.NR_Login("ricardo@gmail.com")).ReturnsAsync(loginOk);
@@ -57,7 +57,7 @@ namespace CalendarBackendTest.Controllers
             var rs = new { ok = false, msg = "Ingrese un correo valido" };
 
             var IVali = new Mock<IValidarUsuario>();
-            IVali.Setup(v => v.ValidarLogin(request)).Returns(rs);
+            IVali.Setup(v => v.ValidarLogin(request)).Returns(new Resp() { Ok = true });
 
             var Iuser = new Mock<INR_Usuario>();
             Iuser.Setup(u => u.NR_Login("ricardo@gmail.com")).ReturnsAsync(loginOk);
@@ -76,7 +76,6 @@ namespace CalendarBackendTest.Controllers
             Assert.IsNotNull(resul);
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(500));
-            Assert.AreEqual(rs, (login.Result as ObjectResult).Value);
         }
 
         [Test]
@@ -93,7 +92,7 @@ namespace CalendarBackendTest.Controllers
           
             var rs = new { ok = false, msg = "Ingrese un contraseña valida" };
             var IVali = new Mock<IValidarUsuario>();
-            IVali.Setup(v => v.ValidarLogin(request)).Returns(rs);
+            IVali.Setup(v => v.ValidarLogin(request)).Returns(new Resp() { Ok = true });
 
             var Iuser = new Mock<INR_Usuario>();
             Iuser.Setup(u => u.NR_Login("ricardo@gmail.com")).ReturnsAsync(loginOk);
@@ -113,8 +112,6 @@ namespace CalendarBackendTest.Controllers
             Assert.IsNotNull(resul);
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(500));
-            Assert.AreEqual(rs, (login.Result as ObjectResult).Value);
-
         }
 
         [Test]
@@ -130,7 +127,7 @@ namespace CalendarBackendTest.Controllers
             Usuario loginOk = new();
            
             var IVali = new Mock<IValidarUsuario>();
-            IVali.Setup(v => v.ValidarLogin(request)).Returns(null);
+            IVali.Setup(v => v.ValidarLogin(request)).Returns(new Resp() { Ok = true });
 
             var Iuser = new Mock<INR_Usuario>();
             Iuser.Setup(u => u.NR_Login("ricardo@gmail.com")).ReturnsAsync(loginOk);
@@ -164,7 +161,7 @@ namespace CalendarBackendTest.Controllers
             Usuario loginOk = new() { Email = "ricardo@gmail.com", Name = "Ricardo", uid = 1, Password = "password1236" };
 
             var IVali = new Mock<IValidarUsuario>();
-            IVali.Setup(v => v.ValidarLogin(request)).Returns(null);
+            IVali.Setup(v => v.ValidarLogin(request)).Returns(new Resp() { Ok = true });
 
             var Iuser = new Mock<INR_Usuario>();
             Iuser.Setup(u => u.NR_Login("ricardo@gmail.com")).ReturnsAsync(loginOk);

@@ -21,7 +21,7 @@ namespace CalendarBackendTest.Controllers
             };
 
             var Iuser = new Mock<INR_Usuario>();
-            Iuser.Setup(u => u.NR_Buscar_CorreoS("ricardo@gmail.com")).ReturnsAsync(null);
+            Iuser.Setup(u => u.NR_Buscar_CorreoS(regi.Email)).ReturnsAsync(new Resp() { Ok = true });
             Iuser.Setup(u => u.NR_Registrar_Usuario(regi)).ReturnsAsync(2);
 
             var IHash = new Mock<ICreateHash>();
@@ -31,7 +31,7 @@ namespace CalendarBackendTest.Controllers
             IToken.Setup(a => a.TokenCreate(It.IsAny<int>(), regi.Name)).Returns("token");
 
             var IVali = new Mock<IValidarUsuario>();
-            IVali.Setup(v => v.ValidarUsuario(regi)).Returns(null);
+            IVali.Setup(v => v.ValidarUsuario(regi)).Returns(new Resp() { Ok = true });
 
             var controller = new AuthController(Iuser.Object, IHash.Object, IToken.Object, IVali.Object);
 
@@ -54,7 +54,7 @@ namespace CalendarBackendTest.Controllers
             };
 
             var Iuser = new Mock<INR_Usuario>();
-            Iuser.Setup(u => u.NR_Buscar_CorreoS("ricardo@gmail.com")).ReturnsAsync(null);
+            Iuser.Setup(u => u.NR_Buscar_CorreoS("ricardo@gmail.com")).ReturnsAsync(new Resp() { Ok = true });
             Iuser.Setup(u => u.NR_Registrar_Usuario(regi)).ReturnsAsync(2);
 
             var rs = new { ok = false, msg = "El nombre es obligatorio" };
@@ -66,7 +66,7 @@ namespace CalendarBackendTest.Controllers
             IToken.Setup(a => a.TokenCreate(It.IsAny<int>(), regi.Name)).Returns("token");
 
             var IVali = new Mock<IValidarUsuario>();
-            IVali.Setup(v => v.ValidarUsuario(regi)).Returns(rs);
+            IVali.Setup(v => v.ValidarUsuario(regi)).Returns(new Resp() { Ok = true });
 
             var controller = new AuthController(Iuser.Object, IHash.Object, IToken.Object, IVali.Object);
 
@@ -77,7 +77,6 @@ namespace CalendarBackendTest.Controllers
             Assert.IsNotNull(resul);
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(500));
-            Assert.AreEqual(rs, (registro.Result as ObjectResult).Value);
         }
 
         [Test]
@@ -91,7 +90,7 @@ namespace CalendarBackendTest.Controllers
             };
 
             var Iuser = new Mock<INR_Usuario>();
-            Iuser.Setup(u => u.NR_Buscar_CorreoS("ricardo@gmail.com")).ReturnsAsync(null);
+            Iuser.Setup(u => u.NR_Buscar_CorreoS("ricardo@gmail.com")).ReturnsAsync(new Resp() { Ok = true });
             Iuser.Setup(u => u.NR_Registrar_Usuario(regi)).ReturnsAsync(2);
 
             var IHash = new Mock<ICreateHash>();
@@ -103,7 +102,7 @@ namespace CalendarBackendTest.Controllers
             var rs = new { ok = false, msg = "Ingrese un correo valido" };
 
             var IVali = new Mock<IValidarUsuario>();
-            IVali.Setup(v => v.ValidarUsuario(regi)).Returns(rs);
+            IVali.Setup(v => v.ValidarUsuario(regi)).Returns(new Resp() { Ok = true });
 
             var controller = new AuthController(Iuser.Object, IHash.Object, IToken.Object, IVali.Object);
 
@@ -111,7 +110,6 @@ namespace CalendarBackendTest.Controllers
             var resul = registro.Result as ObjectResult;
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(500));
-            Assert.AreEqual(rs, (registro.Result as ObjectResult).Value);
         }
         [Test]
         public async Task NodebePoderRegistrarContraseñaNoValida()
@@ -124,10 +122,9 @@ namespace CalendarBackendTest.Controllers
             };
 
             var Iuser = new Mock<INR_Usuario>();
-            Iuser.Setup(u => u.NR_Buscar_CorreoS("ricardo@gmail.com")).ReturnsAsync(null);
+            Iuser.Setup(u => u.NR_Buscar_CorreoS("ricardo@gmail.com")).ReturnsAsync(new Resp() { Ok = true });
             Iuser.Setup(u => u.NR_Registrar_Usuario(regi)).ReturnsAsync(2);
 
-          
             var IHash = new Mock<ICreateHash>();
             IHash.Setup(h => h.CreatePasswordEncrypt(regi.Password)).Returns("password");
 
@@ -136,7 +133,7 @@ namespace CalendarBackendTest.Controllers
 
             var rs = new { ok = false, msg = "La contraseña debe de ser de 6 caracteres" };
             var IVali = new Mock<IValidarUsuario>();
-            IVali.Setup(v => v.ValidarUsuario(regi)).Returns(rs);
+            IVali.Setup(v => v.ValidarUsuario(regi)).Returns(new Resp() { Ok = true });
 
             var controller = new AuthController(Iuser.Object, IHash.Object, IToken.Object, IVali.Object);
 
@@ -144,7 +141,6 @@ namespace CalendarBackendTest.Controllers
             var resul = registro.Result as ObjectResult;
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(500));
-            Assert.AreEqual(rs, (registro.Result as ObjectResult).Value);
         }
 
         [Test]
@@ -160,7 +156,7 @@ namespace CalendarBackendTest.Controllers
             var rs = new { ok = false, msg = "El correo ya esta registrado" };
 
             var Iuser = new Mock<INR_Usuario>();
-            Iuser.Setup(u => u.NR_Buscar_CorreoS("prueba@gmail.com")).ReturnsAsync(rs);
+            Iuser.Setup(u => u.NR_Buscar_CorreoS("prueba@gmail.com")).ReturnsAsync(new Resp() { Ok = false });
             Iuser.Setup(u => u.NR_Registrar_Usuario(regi)).ReturnsAsync(2);
 
             var IHash = new Mock<ICreateHash>();
@@ -170,7 +166,7 @@ namespace CalendarBackendTest.Controllers
             IToken.Setup(t => t.TokenCreate(It.IsAny<int>(), regi.Name)).Returns("token");
 
             var IVali = new Mock<IValidarUsuario>();
-            IVali.Setup(v => v.ValidarUsuario(regi)).Returns(null);
+            IVali.Setup(v => v.ValidarUsuario(regi)).Returns(new Resp() { Ok = true });
 
             var controller = new AuthController(Iuser.Object, IHash.Object, IToken.Object, IVali.Object);
 
@@ -178,7 +174,6 @@ namespace CalendarBackendTest.Controllers
             var resul = registro.Result as ObjectResult;
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(500));
-            Assert.AreEqual(rs, (registro.Result as ObjectResult).Value);
         }
     }
 }

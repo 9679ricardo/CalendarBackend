@@ -1,0 +1,11 @@
+s
+jE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackendTest\Controllers\AuthControllerRegisterTest.csutf-8p
+gE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackendTest\Controllers\AuthControllerTestLogin.csutf-8p
+gE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackendTest\Controllers\AuthControllerTestRenew.csutf-8m
+dE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackendTest\Controllers\EventoControllerTest.csutf-8s
+jE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackendTest\Controllers\NotificationControllerTest.csutf-8S
+JE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackendTest\Usings.csutf-8}
+rC:\Users\ander\.nuget\packages\microsoft.net.test.sdk\17.1.0\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.Program.csutf-8‚
+wE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackendTest\obj\Debug\net6.0\CalendarBackendTest.GlobalUsings.g.csutf-8Œ
+€E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackendTest\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.csutf-8€
+uE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackendTest\obj\Debug\net6.0\CalendarBackendTest.AssemblyInfo.csutf-8

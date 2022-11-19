@@ -12,7 +12,7 @@ namespace CalendarBackendTest.Controllers
     public class AuthControllerTestRenew
     {
         [Test]
-        public async Task DebePoderValidarTokenOk()
+        public  void DebePoderValidarTokenOk()
         {
             var ITok = new Mock<ITokenCreate>();
             var Iuser = new Mock<INR_Usuario>();
@@ -56,7 +56,7 @@ namespace CalendarBackendTest.Controllers
         }
 
         [Test]
-        public async Task NoDebePoderValidarTokenOk()
+        public void NoDebePoderValidarTokenOk()
         {
             var ITok = new Mock<ITokenCreate>();
             var Iuser = new Mock<INR_Usuario>();

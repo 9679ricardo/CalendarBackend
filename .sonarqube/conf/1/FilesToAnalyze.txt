@@ -1,0 +1,6 @@
+﻿E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\interfaces\IValidarCampos.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\interfaces\IValidarEvento.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\interfaces\IValidarUsuario.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarCampos.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarEvento.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarUsuario.cs

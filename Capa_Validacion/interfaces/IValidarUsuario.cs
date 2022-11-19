@@ -4,7 +4,7 @@ namespace Capa_Validacion
 {
     public interface IValidarUsuario
     {
-        object ValidarUsuario(UsuarioRegister usuario);
-        object ValidarLogin(UsuarioLogin usuario);
+        Resp ValidarUsuario(UsuarioRegister usuario);
+        Resp ValidarLogin(UsuarioLogin usuario);
     }
 }

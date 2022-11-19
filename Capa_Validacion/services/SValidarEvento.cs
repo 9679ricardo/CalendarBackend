@@ -4,19 +4,20 @@ namespace Capa_Validacion
 {
     public class SValidarEvento : IValidarEvento
     {
-        public object ValidarEventoId(int uid)
+        public Resp ValidarEventoId(int uid)
         {
-            if (uid <= 0) return new { ok = false, msg = "Id no válido" };
+            if (uid <= 0) return new() { Ok = false, msg = "Id no válido" };
 
-            return null;
+            return new() { Ok = true };
         }
 
-        public object ValidarEvento(Evento evento)
+        public Resp ValidarEvento(Evento evento)
         {
-            if (string.IsNullOrEmpty(evento.Title)) return new { ok = false, msg = "El título es obligatorio" };
-            if (string.IsNullOrEmpty(evento.Start)) return new { ok = false, msg = "La fecha inicial es obligatoria" };
-            if (string.IsNullOrEmpty(evento.End)) return new { ok = false, msg = "La fecha final es obligatoria" };
-            return null;
+            if (string.IsNullOrEmpty(evento.Title)) return new() { Ok = false, msg = "El título es obligatorio" };
+            if (string.IsNullOrEmpty(evento.Start)) return new() { Ok = false, msg = "La fecha inicial es obligatoria" };
+            if (string.IsNullOrEmpty(evento.End)) return new() { Ok = false, msg = "La fecha final es obligatoria" };
+            
+            return new() { Ok = true };
         }
     }
 }

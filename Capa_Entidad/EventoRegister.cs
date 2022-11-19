@@ -2,10 +2,9 @@
 {
     public class EventoRegister
     {
-        public string Title { get; set; }
-        public string Notes { get; set; }
-        public string Start { get; set; }
-        public string End { get; set; }
-        //public List<Guests> ListGuests { get; set; }
+        public string Title { get; set; } = "";
+        public string Notes { get; set; } = ""; 
+        public string Start { get; set; } = "";
+        public string End { get; set; } = "";
     }
 }

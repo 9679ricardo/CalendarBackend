@@ -19,6 +19,8 @@ namespace CalendarBackendTest.Controllers
         {
             var IToken = new Mock<ITokenCreate>();
             var INotificacion = new Mock<INR_Notificacion>();
+            var IEvento = new Mock<INR_Evento>();
+            var ISend = new Mock<ISendEmail>();
 
             var identity = new ClaimsIdentity();
             identity.AddClaims(new List<Claim>()
@@ -39,7 +41,7 @@ namespace CalendarBackendTest.Controllers
             IToken.Setup(p => p.GetUser(principal.Claims)).Returns(ident);
             INotificacion.Setup(p => p.INR_Mostar_Todos_Notificacion_Usuario(ident.Id_Usuario)).ReturnsAsync(new List<Notificacion>());
 
-            var controller = new NotificationController(null, IToken.Object, INotificacion.Object, null)
+            var controller = new NotificationController(IEvento.Object, IToken.Object, INotificacion.Object, ISend.Object)
             {
                 ControllerContext = new ControllerContext()
                 {
@@ -63,6 +65,7 @@ namespace CalendarBackendTest.Controllers
             var IToken = new Mock<ITokenCreate>();
             var INotificacion = new Mock<INR_Notificacion>();
             var IEvento = new Mock<INR_Evento>();
+            var ISend = new Mock<ISendEmail>();
 
             var identity = new ClaimsIdentity();
             identity.AddClaims(new List<Claim>()
@@ -90,7 +93,7 @@ namespace CalendarBackendTest.Controllers
                 User = "Ricardo",
                 UserUid = 1,
                 IdCre = 1,
-                State = null,
+                State = "Activo",
             };
 
             NotificacionDelete noti = new()
@@ -105,7 +108,7 @@ namespace CalendarBackendTest.Controllers
             INotificacion.Setup(p => p.NR_Eliminar_Notificacion(noti.Id_Not, ident.Id_Usuario)).ReturnsAsync(true);
             IEvento.Setup(p => p.INR_Mostar_Todos_Usuarios_Evento(evento.Id)).ReturnsAsync(new List<Guests>());
 
-            var controller = new NotificationController(IEvento.Object, IToken.Object, INotificacion.Object, null)
+            var controller = new NotificationController(IEvento.Object, IToken.Object, INotificacion.Object, ISend.Object)
             {
                 ControllerContext = new ControllerContext()
                 {
@@ -128,6 +131,8 @@ namespace CalendarBackendTest.Controllers
         {
             var IToken = new Mock<ITokenCreate>();
             var INotificacion = new Mock<INR_Notificacion>();
+            var IEvento = new Mock<INR_Evento>();
+            var ISend = new Mock<ISendEmail>();
 
             var identity = new ClaimsIdentity();
             identity.AddClaims(new List<Claim>()
@@ -154,7 +159,7 @@ namespace CalendarBackendTest.Controllers
             IToken.Setup(p => p.GetUser(principal.Claims)).Returns(ident);
             INotificacion.Setup(p => p.NR_Eliminar_Notificacion(noti.Id_Not, ident.Id_Usuario)).ReturnsAsync(true);
 
-            var controller = new NotificationController(null, IToken.Object, INotificacion.Object, null)
+            var controller = new NotificationController(IEvento.Object, IToken.Object, INotificacion.Object, ISend.Object)
             {
                 ControllerContext = new ControllerContext()
                 {
@@ -177,7 +182,8 @@ namespace CalendarBackendTest.Controllers
             var IToken = new Mock<ITokenCreate>();
             var INotificacion = new Mock<INR_Notificacion>();
             var ISend = new Mock<ISendEmail>();
-            
+            var IEvento = new Mock<INR_Evento>();
+
             var identity = new ClaimsIdentity();
             identity.AddClaims(new List<Claim>()
             {
@@ -216,7 +222,7 @@ namespace CalendarBackendTest.Controllers
             INotificacion.Setup(p => p.NR_Registrar_Notificacion(Request.Lastinsert,Request.ListGutes, ident.Id_Usuario)).ReturnsAsync(1);
             ISend.Setup(s => s.sendEmailUsers("user1@gmail.com")).Returns(true);
 
-            var controller = new NotificationController(null, IToken.Object, INotificacion.Object, ISend.Object)
+            var controller = new NotificationController(IEvento.Object, IToken.Object, INotificacion.Object, ISend.Object)
             {
                 ControllerContext = new ControllerContext()
                 {

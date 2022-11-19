@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Net.Http;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,13 +17,20 @@ namespace Capa_Negocio
         {
             if (identity != null)
             {
-                string id = identity.FirstOrDefault(o => o.Type == ClaimTypes.NameIdentifier).Value;
-                string no = identity.FirstOrDefault(n => n.Type == ClaimTypes.Surname).Value;
+
+                var id = identity.Where(c => c.Type == ClaimTypes.NameIdentifier)
+                   .Select(c => c.Value).SingleOrDefault();
+
+                var name = identity.Where(c => c.Type == ClaimTypes.Surname)
+                  .Select(c => c.Value).SingleOrDefault();
+
+                if(id is null) return new ClaimsIdent();
+                if (name is null) return new ClaimsIdent();
 
                 ClaimsIdent user = new()
                 {
                     Id_Usuario = int.Parse(id),
-                    Names = no
+                    Names = name
                 };
 
                 return user;
@@ -35,6 +43,9 @@ namespace Capa_Negocio
         {
             try
             {
+                if (string.IsNullOrEmpty(nombre)) return "";
+                if(id == 0) return "";
+
                 var keyBytes = Encoding.UTF8.GetBytes("12751421523ekmedjriccoutr8344ids38754d");
                 var clains = new ClaimsIdentity();
 

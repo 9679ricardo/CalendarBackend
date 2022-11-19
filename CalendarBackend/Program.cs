@@ -50,7 +50,7 @@ builder.Services.AddAuthentication(config =>
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<IBD_Usuario, SBD_Usuario>();
-builder.Services.AddScoped<IDB_Evento, SDB_Evento>();
+builder.Services.AddScoped<IDB_Evento, SdbEvento>();
 builder.Services.AddScoped<ICreateHash, SCreateHash>();
 builder.Services.AddScoped<INR_Usuario, SNR_Usuario>();
 builder.Services.AddScoped<ITokenCreate, STokenCreate>();
