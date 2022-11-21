@@ -5,16 +5,21 @@ namespace CalendarBackend
 {
     public class SSendEmail : ISendEmail
     {
+        private readonly ICOSetting mSetting;
+        public SSendEmail(ICOSetting mSetting)
+        {
+            this.mSetting = mSetting;
+        }
+
         public bool sendEmailUsers(string email)
         {
             try
             {
-                string fromMail = "ing.ricardo.alex@gmail.com";
-                string fromPassword = "ucycjbgrkimevbca";
+                var setting = mSetting.AppSettings();
 
                 MailMessage message = new()
                 {
-                    From = new MailAddress(fromMail),
+                    From = new MailAddress(setting.Email),
                     Subject = "Calendar App"
                 };
 
@@ -27,10 +32,10 @@ namespace CalendarBackend
 
                 message.IsBodyHtml = true;
 
-                var smtpClient = new SmtpClient("smtp.gmail.com")
+                var smtpClient = new SmtpClient(setting.Client)
                 {
                     Port = 587,
-                    Credentials = new NetworkCredential(fromMail, fromPassword),
+                    Credentials = new NetworkCredential(setting.Email, setting.Pass),
                     EnableSsl = true
                 };
 

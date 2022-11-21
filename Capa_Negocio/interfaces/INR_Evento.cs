@@ -8,6 +8,7 @@ namespace Capa_Negocio
         Task<Resp> INR_Eliminar_Evento(int Id_Even, int uid);
         Task<Resp> INR_Eliminar_Evento_Usuario(int Id_Even);
         Task<Resp> INR_Eliminar_Evento_Usuario_Relacion(int Id_Even, int Id_User);
+        Task<Resp> INR_Eliminar_All_Notificacion_Evento_Usuario(int uid);
         Task<List<EventoPart>> INR_Mostar_Todos_Evento_Usuario(int uid);
         Task<List<Guests>> INR_Mostar_Todos_Usuarios_Evento(int Id_Even);
         Task<int> INR_Registrar_Evento(Evento evento);

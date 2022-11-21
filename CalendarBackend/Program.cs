@@ -61,9 +61,11 @@ builder.Services.AddScoped<INR_Evento, SNR_Evento>();
 builder.Services.AddScoped<IDB_Notificacion, SDB_Notificacion>();
 builder.Services.AddScoped<INR_Notificacion, SNR_Notificacion>();
 builder.Services.AddScoped<ISendEmail, SSendEmail>();
+builder.Services.AddScoped<ICOSetting, SCOSetting>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.   
+// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

@@ -245,5 +245,12 @@ namespace Capa_Negocio
 
             return new() { Ok = true };
         }
+
+        public async Task<Resp> INR_Eliminar_All_Notificacion_Evento_Usuario(int uid)
+        {
+            var resp = await mEvento.BD_Eliminar_All_Notificacion_Evento_Usuario(uid);
+            if (resp) return new() { Ok = false, msg = "Por favor hable con el administrador, codigo de error: cod86" };
+            return new() { Ok = true };
+        }
     }
 }

@@ -389,5 +389,52 @@ namespace Capa_Datos
                 return respuesta;
             }
         }
+
+        public async Task<bool> BD_Eliminar_All_Notificacion_Evento_Usuario(int uid)
+        {
+            SqlConnection cn = new();
+            bool respuesta = true;
+
+            try
+            {
+                cn.ConnectionString = con;
+
+                SqlCommand cmd = new("Sp_Eliminar_Notificacion_All", cn)
+                {
+                    CommandTimeout = 20,
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                cmd.Parameters.AddWithValue("@idUsu", uid);
+
+                await cn.OpenAsync();
+
+                int getValue = Convert.ToInt32(await cmd.ExecuteNonQueryAsync());
+
+                if (getValue > 0)
+                {
+                    respuesta = false;
+                }
+                else
+                {
+                    respuesta = true;
+                }
+
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+                cn.Close();
+
+                return respuesta;
+            }
+            catch (Exception)
+            {
+                if (cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+
+                return respuesta;
+            }
+        }
     }
 }

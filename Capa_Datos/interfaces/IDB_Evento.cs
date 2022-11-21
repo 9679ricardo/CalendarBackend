@@ -7,6 +7,7 @@ namespace Capa_Datos
     {
         Task<bool> BD_Editar_Evento(Evento evento);
         Task<bool> BD_Eliminar_Evento(int Id_Even, int uid);
+        Task<bool> BD_Eliminar_All_Notificacion_Evento_Usuario(int uid);
         Task<bool> BD_Eliminar_Evento_Relacion(int Id_Even, int uid);
         Task<bool> BD_Eliminar_Evento_Usuario(int Id_Not);
         Task<DataTable> DB_Mostar_Todos_Evento_Usuario(int uid);

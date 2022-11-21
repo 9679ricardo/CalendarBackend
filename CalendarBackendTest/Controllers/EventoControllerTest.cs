@@ -229,6 +229,7 @@ namespace CalendarBackendTest.Controllers
             IToken.Setup(p => p.GetUser(principal.Claims)).Returns(ident);
             validate.Setup(p => p.ValidarEventoId(1)).Returns(new Resp() { Ok = true });
             IEvento.Setup(p => p.INR_Buscar_Evento(1)).ReturnsAsync(evento);
+            IEvento.Setup(r => r.INR_Eliminar_All_Notificacion_Evento_Usuario(1)).ReturnsAsync(new Resp() { Ok = true });
             IEvento.Setup(r => r.INR_Eliminar_Evento_Usuario(1)).ReturnsAsync(new Resp() { Ok = true });
             IEvento.Setup(p => p.INR_Eliminar_Evento(1, 1)).ReturnsAsync(new Resp() { Ok = true });
 

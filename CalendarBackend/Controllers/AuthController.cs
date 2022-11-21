@@ -29,27 +29,22 @@ namespace CalendarBackend.Controllers
         {
             try
             {
-                /** validar usuario **/
                 var validar = mVUsuario.ValidarUsuario(request);
                 if (!validar.Ok) return StatusCode(500, validar);
 
-                /** validar que en la base de datos no exista el correo a registrar **/
                 var respuesta = await mUsuario.NR_Buscar_CorreoS(request.Email);
                 if (!respuesta.Ok) return StatusCode(500, respuesta);
 
-                /** encriptación de contraseña **/
                 string hsp = mCreateHash.CreatePasswordEncrypt(request.Password);
                 if (string.IsNullOrEmpty(hsp)) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod4" });
 
-                /** registrar usuario en la base de datos **/
                 request.Password = hsp;
                 var uid = await mUsuario.NR_Registrar_Usuario(request);
                 if (uid <= 0) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod5" });
 
-                /** crear token **/
                 var token = mTokenCreate.TokenCreate(uid, request.Name);
                 if (string.IsNullOrEmpty(token)) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: token" });
-                /** retornamos un nuevo objeto con la respuesta **/
+
                 return StatusCode(201, new { ok = true, uid, name = request.Name, token, request.Email });
             }
             catch (Exception)
@@ -63,20 +58,16 @@ namespace CalendarBackend.Controllers
         {
             try
             {
-                /** validar login **/
                 var validar = mVUsuario.ValidarLogin(request);
                 if (!validar.Ok) return StatusCode(500, validar);
 
-                /** consultamos en la base de datos si existe el email **/
                 var login = await mUsuario.NR_Login(request.Email);
                 if (login == null) return StatusCode(500, new { ok = false, msg = "Credenciales incorrectas" });
                 if (login.Password == null) return StatusCode(500, new { ok = false, msg = "Credenciales incorrectas" });
 
-                /** desencriptar de contraseña **/
                 string hsp = mCreateHash.PasswordDecrypt(login.Password);
                 if (!hsp.Equals(request.Password)) return StatusCode(500, new { ok = false, msg = "Credenciales incorrectas" });
 
-                /** crear token **/
                 var token = mTokenCreate.TokenCreate(login.uid, login.Name);
                 if (string.IsNullOrEmpty(token)) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: token" });
 
@@ -126,6 +117,5 @@ namespace CalendarBackend.Controllers
                 return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod6" });
             }
         }
-
     }
 }
