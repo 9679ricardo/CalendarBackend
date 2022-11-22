@@ -4,16 +4,16 @@ using System.Data.SqlClient;
 
 namespace Capa_Datos
 {
-    public class SdbEvento : IDB_Evento
+    public class SdbEvento : IDbEvento
     {
         private readonly string con = "Server=;Database=Notas;Trusted_Connection=True;MultipleActiveResultSets=True";
         public async Task<bool> BD_Editar_Evento(Evento evento)
         {
-            SqlConnection cn = new();
             bool respuesta = false;
-
+            SqlConnection cn = new();
             try
             {
+               
                 cn.ConnectionString = con;
                 SqlCommand cmd = new("Sp_Editar_Nota", cn)
                 {
@@ -59,11 +59,11 @@ namespace Capa_Datos
 
         public async Task<bool> BD_Eliminar_Evento(int Id_Even, int uid)
         {
-            SqlConnection cn = new();
             bool respuesta = true;
-
+            SqlConnection cn = new();
             try
             {
+                
                 cn.ConnectionString = con;
 
                 SqlCommand cmd = new("Sp_Eliminar_Nota", cn)
@@ -107,11 +107,11 @@ namespace Capa_Datos
 
         public async Task<bool> BD_Eliminar_Evento_Usuario(int Id_Not)
         {
-            SqlConnection cn = new();
             bool respuesta = true;
-             
+            SqlConnection cn = new();
             try
             {
+               
                 cn.ConnectionString = con;
 
                 SqlCommand cmd = new("Sp_Eliminar_Nota_Usuario", cn)
@@ -154,9 +154,8 @@ namespace Capa_Datos
 
         public async Task<DataTable> DB_Mostar_Todos_Evento_Usuario(int uid)
         {
-            SqlConnection cn = new();
             DataTable data = new();
-
+            SqlConnection cn = new();
             try
             {
                 cn.ConnectionString = con;
@@ -184,10 +183,8 @@ namespace Capa_Datos
 
         public async Task<int> BD_Registrar_Evento(Evento evento)
         {
-            SqlConnection cn = new();
-
             int respuesta;
-
+            SqlConnection cn = new();
             try
             {
                 cn.ConnectionString = con;
@@ -236,9 +233,8 @@ namespace Capa_Datos
 
         public async Task<DataTable> BD_Buscar_Evento(int Id_Not)
         {
-            SqlConnection cn = new();
             DataTable data = new();
-
+            SqlConnection cn = new();
             try
             {
                 cn.ConnectionString = con;
@@ -267,9 +263,8 @@ namespace Capa_Datos
 
         public async Task<int> BD_Registrar_Evento_Relacion(int Id_Even, int uid)
         {
-            SqlConnection cn = new();
-
             int respuesta;
+            SqlConnection cn = new();
 
             try
             {
@@ -314,8 +309,8 @@ namespace Capa_Datos
 
         public async Task<DataTable> DB_Mostar_Todos_Usuarios_Evento(int Id_Even)
         {
-            SqlConnection cn = new();
             DataTable data = new();
+            SqlConnection cn = new();
 
             try
             {
@@ -344,8 +339,8 @@ namespace Capa_Datos
 
         public async Task<bool> BD_Eliminar_Evento_Relacion(int Id_Even, int uid)
         {
-            SqlConnection cn = new();
             bool respuesta = true;
+            SqlConnection cn = new();
 
             try
             {
@@ -359,53 +354,6 @@ namespace Capa_Datos
 
                 cmd.Parameters.AddWithValue("@idNota", Id_Even);
                 cmd.Parameters.AddWithValue("@idUser", uid);
-
-                await cn.OpenAsync();
-
-                int getValue = Convert.ToInt32(await cmd.ExecuteNonQueryAsync());
-
-                if (getValue > 0)
-                {
-                    respuesta = false;
-                }
-                else
-                {
-                    respuesta = true;
-                }
-
-                cmd.Parameters.Clear();
-                cmd.Dispose();
-                cn.Close();
-
-                return respuesta;
-            }
-            catch (Exception)
-            {
-                if (cn.State == ConnectionState.Open)
-                {
-                    cn.Close();
-                }
-
-                return respuesta;
-            }
-        }
-
-        public async Task<bool> BD_Eliminar_All_Notificacion_Evento_Usuario(int uid)
-        {
-            SqlConnection cn = new();
-            bool respuesta = true;
-
-            try
-            {
-                cn.ConnectionString = con;
-
-                SqlCommand cmd = new("Sp_Eliminar_Notificacion_All", cn)
-                {
-                    CommandTimeout = 20,
-                    CommandType = CommandType.StoredProcedure
-                };
-
-                cmd.Parameters.AddWithValue("@idUsu", uid);
 
                 await cn.OpenAsync();
 

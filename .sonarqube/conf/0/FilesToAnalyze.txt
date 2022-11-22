@@ -4,12 +4,14 @@ E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Evento.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoPart.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoRegister.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoUpdate.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EvePartHe.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Guests.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\ListGuest.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Notificacion.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\NotificacionDelete.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\NotificacionRegister.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Relacion.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Resp.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Usuario.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\UsuarioLogin.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\UsuarioRegister.cs

@@ -11,12 +11,12 @@ namespace CalendarBackend.Controllers
     [ApiController]
     public class AuthController : Controller
     {
-        readonly INR_Usuario mUsuario;
+        readonly INrUsuario mUsuario;
         readonly ICreateHash mCreateHash;
         readonly ITokenCreate mTokenCreate;
         readonly IValidarUsuario mVUsuario;
 
-        public AuthController(INR_Usuario mUsuario, ICreateHash mCreateHash, ITokenCreate mTokenCreate, IValidarUsuario mVUsuario)
+        public AuthController(INrUsuario mUsuario, ICreateHash mCreateHash, ITokenCreate mTokenCreate, IValidarUsuario mVUsuario)
         {
             this.mUsuario = mUsuario;
             this.mCreateHash = mCreateHash;

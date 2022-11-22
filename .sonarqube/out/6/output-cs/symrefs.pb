@@ -1,68 +1,50 @@
 z
 HE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\ClaimsIdent.cs
 
-		 
+ 
 
- 
+ 
 
- 
+ 
 
- f
+ –
 @E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Dev.cs
 
  
 
  
 
- ½
+ 
+
+ #
+
+ 
+
+		 
+
+
+
+ u
 CE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Evento.cs
 
  
 
  
 
- 
+ 
 
- 
-
- 
-
-		 
-
-
-
- 
-
- 
-
- 
-
- Í
+ …
 GE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoPart.cs
 
  
 
  
 
- 
+ 
 
- 
+ 
 
- 
-
-		 
-
-
-
- 
-
- 
-
- 
-
- 
-
- &‰
+ &‰
 KE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoRegister.cs
 
  
@@ -86,7 +68,24 @@ IE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoUpdate.cs
 
  
 
-		 u
+		 œ
+FE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EvePartHe.cs
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+		 
+
+
+
+ u
 CE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Guests.cs
 
  
@@ -142,7 +141,14 @@ EE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Relacion.cs
 
  
 
- ‚
+ g
+AE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Resp.cs
+
+ 
+
+ 
+
+ ‚
 DE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Usuario.cs
 
  

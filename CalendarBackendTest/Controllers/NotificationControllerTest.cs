@@ -4,10 +4,7 @@ using Capa_Entidad;
 using Capa_Negocio;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Moq;
-using NUnit.Framework.Internal.Execution;
-using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 
 namespace CalendarBackendTest.Controllers
@@ -18,8 +15,8 @@ namespace CalendarBackendTest.Controllers
         public async Task DebePoderDevolverUnaListaDeNotificaciones()
         {
             var IToken = new Mock<ITokenCreate>();
-            var INotificacion = new Mock<INR_Notificacion>();
-            var IEvento = new Mock<INR_Evento>();
+            var INotificacion = new Mock<INrNotificacion>();
+            var IEvento = new Mock<INrEvento>();
             var ISend = new Mock<ISendEmail>();
 
             var identity = new ClaimsIdentity();
@@ -53,7 +50,7 @@ namespace CalendarBackendTest.Controllers
             };
 
             var resul = await controller.GetAllNotificationUsuario();
-            Assert.IsNotNull(resul);
+            Assert.That(resul, Is.Not.Null);
             var view = resul.Result as ObjectResult;
             Assert.That(view, Is.Not.Null);
             Assert.That(view.StatusCode, Is.EqualTo(201));
@@ -63,8 +60,8 @@ namespace CalendarBackendTest.Controllers
         public async Task DebePoderGuardarUnaNotificacion()
         { 
             var IToken = new Mock<ITokenCreate>();
-            var INotificacion = new Mock<INR_Notificacion>();
-            var IEvento = new Mock<INR_Evento>();
+            var INotificacion = new Mock<INrNotificacion>();
+            var IEvento = new Mock<INrEvento>();
             var ISend = new Mock<ISendEmail>();
 
             var identity = new ClaimsIdentity();
@@ -120,7 +117,7 @@ namespace CalendarBackendTest.Controllers
             };
 
             var resul = await controller.Create(noti);
-            Assert.IsNotNull(resul);
+            Assert.That(resul, Is.Not.Null);
             var view = resul.Result as ObjectResult;
             Assert.That(view, Is.Not.Null);
             Assert.That(view.StatusCode, Is.EqualTo(201));
@@ -130,8 +127,8 @@ namespace CalendarBackendTest.Controllers
         public async Task DebePoderEliminarUnaNotificacion()
         {
             var IToken = new Mock<ITokenCreate>();
-            var INotificacion = new Mock<INR_Notificacion>();
-            var IEvento = new Mock<INR_Evento>();
+            var INotificacion = new Mock<INrNotificacion>();
+            var IEvento = new Mock<INrEvento>();
             var ISend = new Mock<ISendEmail>();
 
             var identity = new ClaimsIdentity();
@@ -171,7 +168,7 @@ namespace CalendarBackendTest.Controllers
             };
 
             var resul = await controller.Delete(noti);
-            Assert.IsNotNull(resul);
+            Assert.That(resul, Is.Not.Null);
             var view = resul.Result as ObjectResult;
             Assert.That(view, Is.Not.Null);
             Assert.That(view.StatusCode, Is.EqualTo(201));
@@ -180,9 +177,9 @@ namespace CalendarBackendTest.Controllers
         public async Task DebePoderEnviarUnaNotificacion()
         {
             var IToken = new Mock<ITokenCreate>();
-            var INotificacion = new Mock<INR_Notificacion>();
+            var INotificacion = new Mock<INrNotificacion>();
             var ISend = new Mock<ISendEmail>();
-            var IEvento = new Mock<INR_Evento>();
+            var IEvento = new Mock<INrEvento>();
 
             var identity = new ClaimsIdentity();
             identity.AddClaims(new List<Claim>()
@@ -234,7 +231,7 @@ namespace CalendarBackendTest.Controllers
             };
             
             var resul = await controller.CreateGuests(Request);
-            Assert.IsNotNull(resul);
+            Assert.That(resul, Is.Not.Null);
             var view = resul.Result as ObjectResult;
             Assert.That(view, Is.Not.Null);
             Assert.That(view.StatusCode, Is.EqualTo(201));

@@ -20,7 +20,7 @@ namespace CalendarBackendTest.Controllers
                 Password = "Prueba123"
             };
 
-            var Iuser = new Mock<INR_Usuario>();
+            var Iuser = new Mock<INrUsuario>();
             Iuser.Setup(u => u.NR_Buscar_CorreoS(regi.Email)).ReturnsAsync(new Resp() { Ok = true });
             Iuser.Setup(u => u.NR_Registrar_Usuario(regi)).ReturnsAsync(2);
 
@@ -38,7 +38,6 @@ namespace CalendarBackendTest.Controllers
             var registro = await controller.Register(regi);
 
             var resul = registro.Result as ObjectResult;
-            Assert.IsNotNull(resul);
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(201));
         }
@@ -53,7 +52,7 @@ namespace CalendarBackendTest.Controllers
                 Password = "Prueba123"
             };
 
-            var Iuser = new Mock<INR_Usuario>();
+            var Iuser = new Mock<INrUsuario>();
             Iuser.Setup(u => u.NR_Buscar_CorreoS("ricardo@gmail.com")).ReturnsAsync(new Resp() { Ok = true });
             Iuser.Setup(u => u.NR_Registrar_Usuario(regi)).ReturnsAsync(2);
 
@@ -74,7 +73,6 @@ namespace CalendarBackendTest.Controllers
 
             var resul = registro.Result as ObjectResult;
 
-            Assert.IsNotNull(resul);
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(500));
         }
@@ -89,7 +87,7 @@ namespace CalendarBackendTest.Controllers
                 Password = "Prueba123"
             };
 
-            var Iuser = new Mock<INR_Usuario>();
+            var Iuser = new Mock<INrUsuario>();
             Iuser.Setup(u => u.NR_Buscar_CorreoS("ricardo@gmail.com")).ReturnsAsync(new Resp() { Ok = true });
             Iuser.Setup(u => u.NR_Registrar_Usuario(regi)).ReturnsAsync(2);
 
@@ -121,7 +119,7 @@ namespace CalendarBackendTest.Controllers
                 Password = ""
             };
 
-            var Iuser = new Mock<INR_Usuario>();
+            var Iuser = new Mock<INrUsuario>();
             Iuser.Setup(u => u.NR_Buscar_CorreoS("ricardo@gmail.com")).ReturnsAsync(new Resp() { Ok = true });
             Iuser.Setup(u => u.NR_Registrar_Usuario(regi)).ReturnsAsync(2);
 
@@ -155,7 +153,7 @@ namespace CalendarBackendTest.Controllers
 
             var rs = new { ok = false, msg = "El correo ya esta registrado" };
 
-            var Iuser = new Mock<INR_Usuario>();
+            var Iuser = new Mock<INrUsuario>();
             Iuser.Setup(u => u.NR_Buscar_CorreoS("prueba@gmail.com")).ReturnsAsync(new Resp() { Ok = false });
             Iuser.Setup(u => u.NR_Registrar_Usuario(regi)).ReturnsAsync(2);
 

@@ -2,7 +2,7 @@
 
 namespace Capa_Negocio
 {
-    public interface INR_Usuario
+    public interface INrUsuario
     {
         Task<Resp> NR_Buscar_CorreoS(string email);
         Task<int> NR_Registrar_Usuario(UsuarioRegister usuario);

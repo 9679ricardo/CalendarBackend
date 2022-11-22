@@ -1,46 +1,50 @@
-¾
+ž
 HE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\ClaimsIdent.cs
-	namespace 	
-Capa_Entidad
+	namespace 	
+Capa_Entidad
  
-{ 
-public		 
+{ 
+public 
 
-class		 
-ClaimsIdent		 
-{
-
- 
-public 
-int 
+class 
+ClaimsIdent 
+{ 
+public 
+int 
 
-Id_Usuario 
-{ 
-get  #
-;# $
-set% (
-;( )
-}* +
-public 
-string 
-Names 
-{ 
-get !
-;! "
-set# &
-;& '
-}( )
-public 
-string 
-Token 
-{ 
-get !
-;! "
-set# &
-;& '
-}( )
-} 
-} ’
+Id_Usuario 
+{ 
+get  #
+;# $
+set% (
+;( )
+}* +
+public 
+string 
+Names 
+{ 
+get !
+;! "
+set# &
+;& '
+}( )
+=* +
+$str, .
+;. /
+public 
+string 
+Token 
+{ 
+get !
+;! "
+set# &
+;& '
+}( )
+=* +
+$str, .
+;. /
+} 
+}		 ž
 @E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Dev.cs
 	namespace 	
 Capa_Entidad
@@ -59,7 +63,10 @@ Id_Usuario 
 ;  !
 set" %
 ;% &
-}' (
+}' (
+=) *
+$str+ -
+;- .
 public 
 string 
 Token 
@@ -69,8 +76,83 @@ Id_Usuario 
 set# &
 ;& '
 }( )
-} 
-} »
+=* +
+$str, .
+;. /
+public 
+string 
+DevConnection #
+{$ %
+get& )
+;) *
+set+ .
+;. /
+}0 1
+=2 3
+$str4 6
+;6 7
+public 
+string 
+Pass 
+{ 
+get  
+;  !
+set" %
+;% &
+}' (
+=) *
+$str+ -
+;- .
+public		 
+string		 
+Email		 
+{		 
+get		 !
+;		! "
+set		# &
+;		& '
+}		( )
+=		* +
+$str		, .
+;		. /
+public
+
+ 
+string
+
+ 
+Client
+
+ 
+{
+
+ 
+get
+
+ "
+;
+
+" #
+set
+
+$ '
+;
+
+' (
+}
+
+) *
+=
+
++ ,
+$str
+
+- /
+;
+
+/ 0
+} 
+} Î
 CE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Evento.cs
 	namespace 	
 Capa_Entidad
@@ -80,6 +162,8 @@ CE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Evento.cs
 
 class 
 Evento 
+: 
+	EvePartHe #
 { 
 public 
 int 
@@ -90,98 +174,26 @@ CE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Evento.cs
 set  
 ;  !
 }" #
-public 
-string 
-Title 
-{ 
-get !
-;! "
-set# &
-;& '
-}( )
-public 
-string 
-Notes 
-{ 
-get !
-;! "
-set# &
-;& '
-}( )
-public 
-string 
-Start 
-{ 
-get !
-;! "
-set# &
-;& '
-}( )
-public		 
-string		 
-End		 
-{		 
-get		 
-;		  
-set		! $
-;		$ %
-}		& '
-public
-
- 
-string
-
- 
-User
-
- 
-{
-
- 
-get
-
-  
-;
-
-  !
-set
-
-" %
-;
-
-% &
-}
-
-' (
-public 
-int 
-UserUid 
-{ 
-get  
-;  !
-set" %
-;% &
-}' (
-public 
-string 
-State 
-{ 
-get !
-;! "
-set# &
-;& '
-}( )
-public 
-int 
-IdCre 
-{ 
-get 
-; 
-set  #
-;# $
-}% &
-} 
-} ‘
+public 
+int 
+UserUid 
+{ 
+get  
+;  !
+set" %
+;% &
+}' (
+public 
+int 
+IdCre 
+{ 
+get 
+; 
+set  #
+;# $
+}% &
+} 
+}		 µ
 GE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoPart.cs
 	namespace 	
 Capa_Entidad
@@ -192,6 +204,8 @@ GE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoPart.cs
 class 
 
 EventoPart 
+: 
+	EvePartHe '
 { 
 public 
 int 
@@ -202,111 +216,50 @@ EventoPart 
 set  
 ;  !
 }" #
-public 
-string 
-Title 
-{ 
-get !
-;! "
-set# &
-;& '
-}( )
-public 
-string 
-Notes 
-{ 
-get !
-;! "
-set# &
-;& '
-}( )
-public 
-string 
-Start 
-{ 
-get !
-;! "
-set# &
-;& '
-}( )
-public		 
-string		 
-End		 
-{		 
-get		 
-;		  
-set		! $
-;		$ %
-}		& '
-public
-
- 
-string
-
- 
-User
-
- 
-{
-
- 
-get
-
-  
-;
-
-  !
-set
-
-" %
-;
-
-% &
-}
-
-' (
-public 
-int 
-UserUid 
-{ 
-get  
-;  !
-set" %
-;% &
-}' (
-public 
-string 
-State 
-{ 
-get !
-;! "
-set# &
-;& '
-}( )
-public 
-int 
-IdCre 
-{ 
-get 
-; 
-set  #
-;# $
-}% &
-public 
-List 
-< 
-Guests 
-> 
+public 
+int 
+UserUid 
+{ 
+get  
+;  !
+set" %
+;% &
+}' (
+public 
+int 
+IdCre 
+{ 
+get 
+; 
+set  #
+;# $
+}% &
+public 
+List 
+< 
+Guests 
+> 
 
-listGuests &
-{' (
-get) ,
-;, -
-set. 1
-;1 2
-}3 4
-} 
-} Ù
+listGuests &
+{' (
+get) ,
+;, -
+set. 1
+;1 2
+}3 4
+=5 6
+new7 :
+List; ?
+<? @
+Guests@ F
+>F G
+(G H
+)H I
+;I J
+}		 
+}
+
+ ™
 KE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoRegister.cs
 	namespace 	
 Capa_Entidad
@@ -325,7 +278,10 @@ KE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoRegister.cs
 ;! "
 set# &
 ;& '
-}( )
+}( )
+=* +
+$str, .
+;. /
 public 
 string 
 Notes 
@@ -334,7 +290,10 @@ KE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoRegister.cs
 ;! "
 set# &
 ;& '
-}( )
+}( )
+=* +
+$str, .
+;. /
 public 
 string 
 Start 
@@ -343,7 +302,10 @@ KE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoRegister.cs
 ;! "
 set# &
 ;& '
-}( )
+}( )
+=* +
+$str, .
+;. /
 public 
 string 
 End 
@@ -353,10 +315,13 @@ KE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoRegister.cs
 set! $
 ;$ %
 }& '
-}
+=( )
+$str* ,
+;, -
+}		 
+}
 
- 
-} è
+ ¨	
 IE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoUpdate.cs
 	namespace 	
 Capa_Entidad
@@ -384,7 +349,10 @@ IE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoUpdate.cs
 ;! "
 set# &
 ;& '
-}( )
+}( )
+=* +
+$str, .
+;. /
 public 
 string 
 Notes 
@@ -393,7 +361,10 @@ IE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoUpdate.cs
 ;! "
 set# &
 ;& '
-}( )
+}( )
+=* +
+$str, .
+;. /
 public 
 string 
 Start 
@@ -402,7 +373,10 @@ IE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoUpdate.cs
 ;! "
 set# &
 ;& '
-}( )
+}( )
+=* +
+$str, .
+;. /
 public		 
 string		 
 End		 
@@ -412,10 +386,121 @@ IE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EventoUpdate.cs
 set		! $
 ;		$ %
 }		& '
+=		( )
+$str		* ,
+;		, -
 }
 
  
-} «
+}  
+FE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\EvePartHe.cs
+	namespace 	
+Capa_Entidad
+ 
+{ 
+public 
+
+class 
+	EvePartHe 
+{ 
+public 
+string 
+Title 
+{ 
+get !
+;! "
+set# &
+;& '
+}( )
+=* +
+$str, .
+;. /
+public 
+string 
+Notes 
+{ 
+get !
+;! "
+set# &
+;& '
+}( )
+=* +
+$str, .
+;. /
+public 
+string 
+Start 
+{ 
+get !
+;! "
+set# &
+;& '
+}( )
+=* +
+$str, .
+;. /
+public 
+string 
+End 
+{ 
+get 
+;  
+set! $
+;$ %
+}& '
+=( )
+$str* ,
+;, -
+public		 
+string		 
+User		 
+{		 
+get		  
+;		  !
+set		" %
+;		% &
+}		' (
+=		) *
+$str		+ -
+;		- .
+public
+
+ 
+string
+
+ 
+State
+
+ 
+{
+
+ 
+get
+
+ !
+;
+
+! "
+set
+
+# &
+;
+
+& '
+}
+
+( )
+=
+
+* +
+$str
+
+, .
+;
+
+. /
+} 
+} ‹
 CE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Guests.cs
 	namespace 	
 Capa_Entidad
@@ -443,7 +528,10 @@ CE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Guests.cs
 ;! "
 set# &
 ;& '
-}( )
+}( )
+=* +
+$str, .
+;. /
 public 
 string 
 Name 
@@ -453,8 +541,11 @@ CE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Guests.cs
 set" %
 ;% &
 }' (
+=) *
+$str+ -
+;- .
 } 
-}		 Õ
+}		 æ
 FE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\ListGuest.cs
 	namespace 	
 Capa_Entidad
@@ -476,7 +567,16 @@ FE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\ListGuest.cs
 ;+ ,
 set- 0
 ;0 1
-}2 3
+}2 3
+=4 5
+new6 9
+List: >
+<> ?
+Guests? E
+>E F
+(F G
+)G H
+;H I
 public 
 int 
 
@@ -488,7 +588,8 @@ Lastinsert 
 ;( )
 }* +
 } 
-} ƒ	
+} “
+
 IE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Notificacion.cs
 	namespace 	
 Capa_Entidad
@@ -516,7 +617,10 @@ IE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Notificacion.cs
 ;! "
 set# &
 ;& '
-}( )
+}( )
+=* +
+$str, .
+;. /
 public 
 string 
 Email 
@@ -525,7 +629,10 @@ IE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Notificacion.cs
 ;! "
 set# &
 ;& '
-}( )
+}( )
+=* +
+$str, .
+;. /
 public		 
 int		 
 Id_Nota		 
@@ -571,6 +678,9 @@ IE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Notificacion.cs
 set" %
 ;% &
 }' (
+=) *
+$str+ -
+;- .
 } 
 } ®
 OE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\NotificacionDelete.cs
@@ -673,7 +783,40 @@ EE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Relacion.cs
 ;% &
 }' (
 } 
-} Ê
+} ¾
+AE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Resp.cs
+	namespace 	
+Capa_Entidad
+ 
+{ 
+public 
+
+class 
+Resp 
+{ 
+public 
+bool 
+Ok 
+{ 
+get 
+; 
+set !
+;! "
+}# $
+public 
+string 
+msg 
+{ 
+get 
+;  
+set! $
+;$ %
+}& '
+=( )
+$str* ,
+;, -
+} 
+} Ú
 DE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Usuario.cs
 	namespace 	
 Capa_Entidad
@@ -701,7 +844,10 @@ DE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Usuario.cs
 ;  !
 set" %
 ;% &
-}' (
+}' (
+=) *
+$str+ -
+;- .
 public 
 string 
 Email 
@@ -710,7 +856,10 @@ DE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Usuario.cs
 ;! "
 set# &
 ;& '
-}( )
+}( )
+=* +
+$str, .
+;. /
 public 
 string 
 Password 
@@ -720,10 +869,13 @@ DE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\Usuario.cs
 set& )
 ;) *
 }+ ,
+=- .
+$str/ 1
+;1 2
 }		 
 }
 
- ¨
+ ˆ
 IE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\UsuarioLogin.cs
 	namespace 	
 Capa_Entidad
@@ -742,7 +894,10 @@ IE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\UsuarioLogin.cs
 ;! "
 set# &
 ;& '
-}( )
+}( )
+=* +
+$str, .
+;. /
 public 
 string 
 Password 
@@ -752,8 +907,11 @@ IE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\UsuarioLogin.cs
 set& )
 ;) *
 }+ ,
+=- .
+$str/ 1
+;1 2
 } 
-} Æ
+} Ö
 LE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\UsuarioRegister.cs
 	namespace 	
 Capa_Entidad
@@ -772,7 +930,10 @@ LE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\UsuarioRegister.cs
 ;  !
 set" %
 ;% &
-}' (
+}' (
+=) *
+$str+ -
+;- .
 public 
 string 
 Email 
@@ -781,7 +942,10 @@ LE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\UsuarioRegister.cs
 ;! "
 set# &
 ;& '
-}( )
+}( )
+=* +
+$str, .
+;. /
 public 
 string 
 Password 
@@ -791,5 +955,8 @@ LE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Entidad\UsuarioRegister.cs
 set& )
 ;) *
 }+ ,
+=- .
+$str/ 1
+;1 2
 } 
 }		 

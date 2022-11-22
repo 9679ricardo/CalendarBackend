@@ -2,9 +2,11 @@
 E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\Controllers\EventoController.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\Controllers\HomeController.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\Controllers\NotificationController.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\interfaces\ICOSetting.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\interfaces\ISendEmail.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\Models\ErrorViewModel.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\Program.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\services\ScoSetting.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\services\SSendEmail.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\obj\Debug\net6.0\CalendarBackend.GlobalUsings.g.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs

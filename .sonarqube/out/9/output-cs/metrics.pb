@@ -1,17 +1,20 @@
 a
 SE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\ICreateHash.csrk
-RE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\INR_Evento.csr	
-i
-XE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\INR_Notificacion.csr	
-c
-SE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\INR_Usuario.csr
+QE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\INrEvento.csr	
+g
+WE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\INrNotificacion.csr
+	
+b
+RE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\INrUsuario.csr
 	
 e
 TE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\ITokenCreate.csr	
 ª
 QE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\SCreateHash.cs 8r6	
- !"#$%&()*,-./0135679:;<=>?@Ax‚ $./01369=Ê
-PE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\SNR_Evento.cs@ 8rù	 !#%&'()+-./012456789:;<=>?ABDEFGHIJKLMNOQRTUVWYZ[\]^_`abdeghjklmnopqrstuwxz{|}€‚ƒ„…‡ˆ‰‹Œ‘’“”•–—˜™š› ¡¢£¥¦§¨©ª«­®¯±²³´µ¶·¸¹º»¼¾¿ÀÁÃÄÅÆÇÈÉËÌÍÎĞÑÒÓx‚o!#%)+-189:;<=>AHIJKLMNQVY[\]^_`abdgnopqrstw|}„“”•–—˜™š ¢¥©³µ¹º»¾ÀÃÇÍÎĞÂ
-VE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\SNR_Notificacion.cs 8	rF	 !"$%'()+,-./012345678:;=>@ABCDEFHIJKLMNOQRSTx‚ !$-/34567:=@DMQš
-QE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\SNR_Usuario.cs 8j/r(	 !"#$%'(*+-./012x‚!"#'*/É
-RE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\STokenCreate.cs 8rO	 "#$%&')*,-./012456789:;<=?@ABCEGHIJKLMNPRSUVWXYZ[\]x‚&)*/1567;EGMPRSUY
+ !"#$%&()*,-./0135679:;<=>?@Ax‚ $./01369=Ç
+OE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\SnrEvento.cse 8(rË	
+!"#%'()*+-/012346789:;<=>?@ACDFGHIJKLMNOPQSTVWXZ[\]_`bcefhiklmnopqrstuwxz{}~€‚ƒ„…†‡ˆŠ‹’“•–—˜š›œŸ ¡¢£¤¥¦§¨©ª«­®¯°±²³µ¶·¹º»¼½¾¿ÀÂÃÅÆÇÈÉÊÌÍÎÏÑÒÓÔÕÖ×ÙÚÛÜŞßáâãäåæèéêëíîğñóôö÷ùúûüışÿ€‚ƒ…†‡ˆx&‚š#%'+-/3:;<=>?@CJKLMNOPSXZ\]_`bcefhimntwz‚ƒ„…†‡Š’— ¢¤¥¦§¨ª­±»½¿ÀÂÃÇÌÎÑÕÛÜŞãäåêëíîğñóôö÷ûü‚…Ç
+UE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\SnrNotificacion.cs 8rJ	 !"$%'()+,-./01245789:;<=>@ACDFGHIJKLNOPQRSTUWXYZx‚ !$-/12459;<@CFJSW›
+PE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\SnrUsuario.cs 8r,	 "#%&'()*+-.01345678x‚ "#'-05Ö
+RE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\STokenCreate.cs" 8rV	
+ !"$%'(*+,-./1245789:;<=?@ABCDEFGHJKLMNPRSTUVWXY[]^`abcdefghx	‚ $'./145:<@ABFPRX[]^`d

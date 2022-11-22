@@ -24,7 +24,7 @@ namespace CalendarBackendTest.Controllers
             var IVali = new Mock<IValidarUsuario>();
             IVali.Setup(v => v.ValidarLogin(request)).Returns(new Resp() { Ok = true });
 
-            var Iuser = new Mock<INR_Usuario>();
+            var Iuser = new Mock<INrUsuario>();
             Iuser.Setup(u => u.NR_Login("ricardo@gmail.com")).ReturnsAsync(loginOk);
 
             var IHash = new Mock<ICreateHash>();
@@ -38,7 +38,6 @@ namespace CalendarBackendTest.Controllers
             var login = await controller.Login(request);
 
             var resul = login.Result as ObjectResult;
-            Assert.IsNotNull(resul);
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(201));
         }
@@ -59,7 +58,7 @@ namespace CalendarBackendTest.Controllers
             var IVali = new Mock<IValidarUsuario>();
             IVali.Setup(v => v.ValidarLogin(request)).Returns(new Resp() { Ok = true });
 
-            var Iuser = new Mock<INR_Usuario>();
+            var Iuser = new Mock<INrUsuario>();
             Iuser.Setup(u => u.NR_Login("ricardo@gmail.com")).ReturnsAsync(loginOk);
 
             var IHash = new Mock<ICreateHash>();
@@ -73,7 +72,6 @@ namespace CalendarBackendTest.Controllers
             var login = await controller.Login(request);
 
             var resul = login.Result as ObjectResult;
-            Assert.IsNotNull(resul);
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(500));
         }
@@ -94,7 +92,7 @@ namespace CalendarBackendTest.Controllers
             var IVali = new Mock<IValidarUsuario>();
             IVali.Setup(v => v.ValidarLogin(request)).Returns(new Resp() { Ok = true });
 
-            var Iuser = new Mock<INR_Usuario>();
+            var Iuser = new Mock<INrUsuario>();
             Iuser.Setup(u => u.NR_Login("ricardo@gmail.com")).ReturnsAsync(loginOk);
 
             var IHash = new Mock<ICreateHash>();
@@ -109,7 +107,6 @@ namespace CalendarBackendTest.Controllers
 
             var resul = login.Result as ObjectResult;
 
-            Assert.IsNotNull(resul);
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(500));
         }
@@ -129,7 +126,7 @@ namespace CalendarBackendTest.Controllers
             var IVali = new Mock<IValidarUsuario>();
             IVali.Setup(v => v.ValidarLogin(request)).Returns(new Resp() { Ok = true });
 
-            var Iuser = new Mock<INR_Usuario>();
+            var Iuser = new Mock<INrUsuario>();
             Iuser.Setup(u => u.NR_Login("ricardo@gmail.com")).ReturnsAsync(loginOk);
 
             var IHash = new Mock<ICreateHash>();
@@ -143,7 +140,6 @@ namespace CalendarBackendTest.Controllers
             var login = await controller.Login(request);
 
             var result = login.Result as ObjectResult;
-            Assert.IsNotNull(result);
             Assert.That(result, Is.Not.Null);
             Assert.That(result.StatusCode, Is.EqualTo(500));
         }
@@ -163,7 +159,7 @@ namespace CalendarBackendTest.Controllers
             var IVali = new Mock<IValidarUsuario>();
             IVali.Setup(v => v.ValidarLogin(request)).Returns(new Resp() { Ok = true });
 
-            var Iuser = new Mock<INR_Usuario>();
+            var Iuser = new Mock<INrUsuario>();
             Iuser.Setup(u => u.NR_Login("ricardo@gmail.com")).ReturnsAsync(loginOk);
 
             var IHash = new Mock<ICreateHash>();
@@ -177,7 +173,6 @@ namespace CalendarBackendTest.Controllers
             var login = await controller.Login(request);
 
             var resul = login.Result as ObjectResult;
-            Assert.IsNotNull(resul);
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(500));
         }

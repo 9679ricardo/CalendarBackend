@@ -1,6 +1,8 @@
-﻿E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\interfaces\IBD_Usuario.cs
-E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\interfaces\IDB_Evento.cs
-E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\interfaces\IDB_Notificacion.cs
-E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\services\SBD_Usuario.cs
-E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\services\SDB_Evento.cs
-E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\services\SDB_Notificacion.cs
+﻿E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\interfaces\IBdAction.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\interfaces\IBdUsuario.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\interfaces\IDbEvento.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\interfaces\IDbNotificacion.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\services\SbdAction.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\services\SbdUsuario.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\services\SdbEvento.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Datos\services\SdbNotificacion.cs

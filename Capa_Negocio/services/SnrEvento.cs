@@ -4,13 +4,15 @@ using System.Data;
 
 namespace Capa_Negocio
 {
-    public class SNR_Evento : INR_Evento
+    public class SnrEvento : INrEvento
     {
-        private readonly IDB_Evento mEvento;
+        private readonly IDbEvento mEvento;
+        private readonly IBdAction mAction;
 
-        public SNR_Evento(IDB_Evento mEvento)
+        public SnrEvento(IDbEvento mEvento, IBdAction mAction)
         {
             this.mEvento = mEvento;
+            this.mAction = mAction;
         }
 
         public async Task<Resp> INR_Editar_Evento(Evento evento)
@@ -49,9 +51,9 @@ namespace Capa_Negocio
             return await mEvento.BD_Registrar_Evento(evento);
         }
 
-        public Evento RegisterData(ClaimsIdent identity, EventoRegister Request)
+        public Evento RegisterDataSn(ClaimsIdent identity, EventoRegister Request)
         {
-            Evento evento = new()
+            var evento = new Evento
             {
                 Title = Request.Title,
                 Notes = Request.Notes,
@@ -159,37 +161,11 @@ namespace Capa_Negocio
                 {
                     foreach (DataRow row in eventos.Rows)
                     {
-                        var user = row["Usuario"].ToString();
-                        if (string.IsNullOrEmpty(user)) break;
-
-                        var title = row["title"].ToString();
-                        if (string.IsNullOrEmpty(title)) break;
-
-                        var notes = row["notes"].ToString();
-                        if (string.IsNullOrEmpty(notes)) break;
-
-                        var start = row["start_note"].ToString();
-                        if (string.IsNullOrEmpty(start)) break;
-
-                        var end = row["end_note"].ToString();
-                        if (string.IsNullOrEmpty(end)) break;
-
-                        EventoPart env = new()
-                        {
-                            Id = Convert.ToInt16(row["Id_Not"].ToString()),
-                            UserUid = Convert.ToInt16(row["Id_Usu"].ToString()),
-                            User = user,
-                            Title = title,
-                            Notes = notes,
-                            Start = start,
-                            End = end,
-                            IdCre = Convert.ToInt16(row["Id_Cre"].ToString())
-                        };
-
-                        var resp = await INR_Mostar_Todos_Usuarios_Evento(env.Id);
-                        env.listGuests = resp;
-
-                        list.Add(env);
+                        var indicted = EvualarDataRow(row);
+                        if (indicted.Id <= 0) break;
+                        var resp = await INR_Mostar_Todos_Usuarios_Evento(indicted.Id);
+                        indicted.listGuests = resp;
+                        list.Add(indicted);
                     }
                     return list;
                 }
@@ -246,11 +222,43 @@ namespace Capa_Negocio
             return new() { Ok = true };
         }
 
-        public async Task<Resp> INR_Eliminar_All_Notificacion_Evento_Usuario(int uid)
+        public async Task<Resp> INR_Eliminar_Notificacion(int uid)
         {
-            var resp = await mEvento.BD_Eliminar_All_Notificacion_Evento_Usuario(uid);
+            var resp = await mAction.BD_Eliminar_Notificacion(uid);
             if (resp) return new() { Ok = false, msg = "Por favor hable con el administrador, codigo de error: cod86" };
             return new() { Ok = true };
+        }
+
+        private static EventoPart EvualarDataRow(DataRow row)
+        {
+            var user = row["Usuario"].ToString();
+            if (string.IsNullOrEmpty(user)) return new();
+
+            var title = row["title"].ToString();
+            if (string.IsNullOrEmpty(title)) return new();
+
+            var notes = row["notes"].ToString();
+            if (string.IsNullOrEmpty(notes)) return new();
+
+            var start = row["start_note"].ToString();
+            if (string.IsNullOrEmpty(start)) return new();
+
+            var end = row["end_note"].ToString();
+            if (string.IsNullOrEmpty(end)) return new();
+
+            EventoPart env = new()
+            {
+                Id = Convert.ToInt16(row["Id_Not"].ToString()),
+                UserUid = Convert.ToInt16(row["Id_Usu"].ToString()),
+                User = user,
+                Title = title,
+                Notes = notes,
+                Start = start,
+                End = end,
+                IdCre = Convert.ToInt16(row["Id_Cre"].ToString())
+            };
+
+            return env;
         }
     }
 }

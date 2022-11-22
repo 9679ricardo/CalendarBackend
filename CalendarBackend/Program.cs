@@ -13,7 +13,6 @@ builder.Configuration.AddJsonFile("appsettings.json");
 var code = builder.Configuration.GetSection("AppSettings:Dev").Get<Dev>();
 var keyBytes = Encoding.UTF8.GetBytes(code.Token);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddCors(options =>
@@ -49,27 +48,25 @@ builder.Services.AddAuthentication(config =>
 });
 
 builder.Services.AddControllers();
-builder.Services.AddScoped<IBD_Usuario, SBD_Usuario>();
-builder.Services.AddScoped<IDB_Evento, SdbEvento>();
+builder.Services.AddScoped<IBdUsuario, SbdUsuario>();
+builder.Services.AddScoped<IDbEvento, SdbEvento>();
 builder.Services.AddScoped<ICreateHash, SCreateHash>();
-builder.Services.AddScoped<INR_Usuario, SNR_Usuario>();
+builder.Services.AddScoped<INrUsuario, SnrUsuario>();
 builder.Services.AddScoped<ITokenCreate, STokenCreate>();
 builder.Services.AddScoped<IValidarCampos, SValidarCampos>();
 builder.Services.AddScoped<IValidarUsuario, SValidarUsuario>();
 builder.Services.AddScoped<IValidarEvento, SValidarEvento>();
-builder.Services.AddScoped<INR_Evento, SNR_Evento>();
-builder.Services.AddScoped<IDB_Notificacion, SDB_Notificacion>();
-builder.Services.AddScoped<INR_Notificacion, SNR_Notificacion>();
+builder.Services.AddScoped<INrEvento, SnrEvento>();
+builder.Services.AddScoped<IDbNotificacion, SdbNotificacion>();
+builder.Services.AddScoped<INrNotificacion, SnrNotificacion>();
 builder.Services.AddScoped<ISendEmail, SSendEmail>();
-builder.Services.AddScoped<ICOSetting, SCOSetting>();
-
+builder.Services.AddScoped<ICOSetting, ScoSetting>();
+builder.Services.AddScoped<IBdAction, SbdAction>();
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 

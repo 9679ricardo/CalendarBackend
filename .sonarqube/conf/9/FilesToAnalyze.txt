@@ -1,10 +1,10 @@
 ﻿E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\ICreateHash.cs
-E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\INR_Evento.cs
-E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\INR_Notificacion.cs
-E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\INR_Usuario.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\INrEvento.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\INrNotificacion.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\INrUsuario.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\interfaces\ITokenCreate.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\SCreateHash.cs
-E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\SNR_Evento.cs
-E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\SNR_Notificacion.cs
-E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\SNR_Usuario.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\SnrEvento.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\SnrNotificacion.cs
+E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\SnrUsuario.cs
 E:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Negocio\services\STokenCreate.cs

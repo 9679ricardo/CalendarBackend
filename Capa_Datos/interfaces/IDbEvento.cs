@@ -3,11 +3,10 @@ using System.Data;
 
 namespace Capa_Datos
 {
-    public interface IDB_Evento
+    public interface IDbEvento
     {
         Task<bool> BD_Editar_Evento(Evento evento);
         Task<bool> BD_Eliminar_Evento(int Id_Even, int uid);
-        Task<bool> BD_Eliminar_All_Notificacion_Evento_Usuario(int uid);
         Task<bool> BD_Eliminar_Evento_Relacion(int Id_Even, int uid);
         Task<bool> BD_Eliminar_Evento_Usuario(int Id_Not);
         Task<DataTable> DB_Mostar_Todos_Evento_Usuario(int uid);
@@ -15,6 +14,5 @@ namespace Capa_Datos
         Task<int> BD_Registrar_Evento(Evento evento);
         Task<int> BD_Registrar_Evento_Relacion(int Id_Even, int uid);
         Task<DataTable> BD_Buscar_Evento(int Id_Not);
-
     }
 }

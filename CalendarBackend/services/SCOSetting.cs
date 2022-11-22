@@ -2,14 +2,14 @@
 
 namespace CalendarBackend
 {
-    public class SCOSetting : ICOSetting
+    public class ScoSetting : ICOSetting
     {
         private readonly IConfiguration mConfiguration;
-        public SCOSetting(IConfiguration mConfiguration)
+        public ScoSetting(IConfiguration mConfiguration)
         {
             this.mConfiguration = mConfiguration;
         }
-
+        
         public Dev AppSettings()
         {
             return mConfiguration.GetSection("AppSettings:Dev").Get<Dev>();

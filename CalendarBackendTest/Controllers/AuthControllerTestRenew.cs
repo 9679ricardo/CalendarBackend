@@ -15,7 +15,7 @@ namespace CalendarBackendTest.Controllers
         public  void DebePoderValidarTokenOk()
         {
             var ITok = new Mock<ITokenCreate>();
-            var Iuser = new Mock<INR_Usuario>();
+            var Iuser = new Mock<INrUsuario>();
             var IHash = new Mock<ICreateHash>();
             var IVali = new Mock<IValidarUsuario>();
 
@@ -50,7 +50,6 @@ namespace CalendarBackendTest.Controllers
 
             var renew =  controller.Renew("tokenrecibido");
             var resul = renew.Result as ObjectResult;
-            Assert.IsNotNull(resul);
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(201));
         }
@@ -59,7 +58,7 @@ namespace CalendarBackendTest.Controllers
         public void NoDebePoderValidarTokenOk()
         {
             var ITok = new Mock<ITokenCreate>();
-            var Iuser = new Mock<INR_Usuario>();
+            var Iuser = new Mock<INrUsuario>();
             var IHash = new Mock<ICreateHash>();
             var IVali = new Mock<IValidarUsuario>();
 
@@ -94,7 +93,6 @@ namespace CalendarBackendTest.Controllers
 
             var renew =  controller.Renew("tokenrecibido");
             var resul = renew.Result as ObjectResult;
-            Assert.IsNotNull(resul);
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(500));
         }

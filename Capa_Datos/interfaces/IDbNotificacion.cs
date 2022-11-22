@@ -3,7 +3,7 @@ using System.Data;
 
 namespace Capa_Datos
 {
-    public interface IDB_Notificacion
+    public interface IDbNotificacion
     {
         Task<int> BD_Registrar_Notificacion(NotificacionRegister notificacion);
         Task<bool> BD_Eliminar_Notificacion(int Id_Not, int Id_Usu);

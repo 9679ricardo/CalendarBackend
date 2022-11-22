@@ -1,6 +1,6 @@
-projectKey=Calendar
+projectKey=Calendar-Ricardo
 serverUrl=https://sonar-test.bit2bittest.com
 serverVersion=9.4.0.54424
-dashboardUrl=https://sonar-test.bit2bittest.com/dashboard?id=Calendar
-ceTaskId=AYSNQZtTTsFzVRHRhcDg
-ceTaskUrl=https://sonar-test.bit2bittest.com/api/ce/task?id=AYSNQZtTTsFzVRHRhcDg
+dashboardUrl=https://sonar-test.bit2bittest.com/dashboard?id=Calendar-Ricardo
+ceTaskId=AYSce-O4pg69nE_u4j1b
+ceTaskUrl=https://sonar-test.bit2bittest.com/api/ce/task?id=AYSce-O4pg69nE_u4j1b

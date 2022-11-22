@@ -1,23 +1,23 @@
 ç
 YE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\interfaces\IValidarCampos.cs
-	namespace 	
-Capa_Validacion
+	namespace 	
+Capa_Validacion
  
-{ 
-public 
+{ 
+public 
 
-	interface 
-IValidarCampos #
-{ 
-bool 
-ValidarEmail 
-( 
-string  
-correo! '
-)' (
-;( )
-} 
-} ê
+	interface 
+IValidarCampos #
+{ 
+bool 
+ValidarEmail 
+( 
+string  
+correo! '
+)' (
+;( )
+} 
+} å
 YE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\interfaces\IValidarEvento.cs
 	namespace 	
 Capa_Validacion
@@ -27,25 +27,25 @@ YE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\interfaces\IValida
 
 	interface 
 IValidarEvento #
-{ 
-object 
-ValidarEventoId 
-( 
-int "
-uid# &
-)& '
-;' (
-object 
-ValidarEvento 
-( 
-Evento #
-evento$ *
-)* +
-;+ ,
+{ 
+Resp 
+ValidarEventoId 
+( 
+int  
+uid! $
+)$ %
+;% &
+Resp 
+ValidarEvento 
+( 
+Evento !
+evento" (
+)( )
+;) *
 }		 
 }
 
- ß
+ £
 ZE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\interfaces\IValidarUsuario.cs
 	namespace 	
 Capa_Validacion
@@ -55,21 +55,21 @@ ZE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\interfaces\IValida
 
 	interface 
 IValidarUsuario $
-{ 
-object 
-ValidarUsuario 
-( 
-UsuarioRegister -
-usuario. 5
-)5 6
-;6 7
-object 
-ValidarLogin 
-( 
-UsuarioLogin (
-usuario) 0
-)0 1
-;1 2
+{ 
+Resp 
+ValidarUsuario 
+( 
+UsuarioRegister +
+usuario, 3
+)3 4
+;4 5
+Resp 
+ValidarLogin 
+( 
+UsuarioLogin &
+usuario' .
+). /
+;/ 0
 }		 
 }
 
@@ -152,7 +152,7 @@ WE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarC
 } 
 } 	
 } 
-} ò
+} ‰
 WE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarEvento.cs
 	namespace 	
 Capa_Validacion
@@ -165,13 +165,13 @@ WE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarE
 :  !
 IValidarEvento" 0
 { 
-public 
-object 
-ValidarEventoId %
-(% &
-int& )
-uid* -
-)- .
+public 
+Resp 
+ValidarEventoId #
+(# $
+int$ '
+uid( +
+)+ ,
 { 	
 if		 
 (		 
@@ -181,27 +181,36 @@ WE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarE
 )		 
 return		  
 new		! $
-{		% &
-ok		' )
-=		* +
-false		, 1
-,		1 2
-msg		3 6
-=		7 8
-$str		9 G
-}		H I
-;		I J
-return 
-null 
-; 
+(		$ %
+)		% &
+{		' (
+Ok		) +
+=		, -
+false		. 3
+,		3 4
+msg		5 8
+=		9 :
+$str		; I
+}		J K
+;		K L
+return 
+new 
+( 
+) 
+{ 
+Ok 
+= 
+true  $
+}% &
+;& '
 } 	
-public 
-object 
-ValidarEvento #
-(# $
-Evento$ *
-evento+ 1
-)1 2
+public 
+Resp 
+ValidarEvento !
+(! "
+Evento" (
+evento) /
+)/ 0
 { 	
 if 
 ( 
@@ -216,16 +225,18 @@ WE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarE
 )2 3
 return4 :
 new; >
-{? @
-okA C
-=D E
-falseF K
-,K L
-msgM P
-=Q R
-$strS m
-}n o
-;o p
+(> ?
+)? @
+{A B
+OkC E
+=F G
+falseH M
+,M N
+msgO R
+=S T
+$strU o
+}p q
+;q r
 if 
 ( 
 string 
@@ -239,16 +250,18 @@ WE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarE
 )2 3
 return4 :
 new; >
-{? @
-okA C
-=D E
-falseF K
-,K L
-msgM P
-=Q R
-$strS t
-}u v
-;v w
+(> ?
+)? @
+{A B
+OkC E
+=F G
+falseH M
+,M N
+msgO R
+=S T
+$strU v
+}w x
+;x y
 if 
 ( 
 string 
@@ -262,22 +275,31 @@ WE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarE
 )0 1
 return2 8
 new9 <
-{= >
-ok? A
-=B C
-falseD I
-,I J
-msgK N
-=O P
-$strQ p
-}q r
-;r s
-return 
-null 
-; 
-} 	
-} 
-} è
+(< =
+)= >
+{? @
+OkA C
+=D E
+falseF K
+,K L
+msgM P
+=Q R
+$strS r
+}s t
+;t u
+return 
+new 
+( 
+) 
+{ 
+Ok 
+= 
+true  $
+}% &
+;& '
+} 	
+} 
+} ã
 XE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarUsuario.cs
 	namespace 	
 Capa_Validacion
@@ -320,13 +342,13 @@ XE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarU
 
 0 1
 } 	
-public 
-object 
-ValidarLogin "
-(" #
-UsuarioLogin# /
-usuario0 7
-)7 8
+public 
+Resp 
+ValidarLogin  
+(  !
+UsuarioLogin! -
+usuario. 5
+)5 6
 { 	
 if 
 ( 
@@ -341,16 +363,18 @@ XE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarU
 ): ;
 return< B
 newC F
-{G H
-okI K
-=L M
-falseN S
-,S T
-msgU X
-=Y Z
-$str[ u
-}v w
-;w x
+(F G
+)G H
+{I J
+OkK M
+=N O
+falseP U
+,U V
+msgW Z
+=[ \
+$str] w
+}x y
+;y z
 if 
 ( 
 string 
@@ -364,27 +388,37 @@ XE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarU
 )6 7
 return8 >
 new? B
-{C D
-okE G
-=H I
-falseJ O
-,O P
-msgQ T
-=U V
-$strW u
-}v w
-;w x
-return 
-null 
-; 
+(B C
+)C D
+{E F
+OkG I
+=J K
+falseL Q
+,Q R
+msgS V
+=W X
+$strY w
+}x y
+;y z
+return 
+new 
+Resp 
+( 
+) 
+{ 
+Ok  "
+=# $
+true% )
+}* +
+;+ ,
 } 	
-public 
-object 
-ValidarUsuario $
-($ %
-UsuarioRegister% 4
-usuario5 <
-)< =
+public 
+Resp 
+ValidarUsuario "
+(" #
+UsuarioRegister# 2
+usuario3 :
+): ;
 { 	
 if 
 ( 
@@ -399,16 +433,18 @@ XE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarU
 )2 3
 return4 :
 new; >
-{? @
-okA C
-=D E
-falseF K
-,K L
-msgM P
-=Q R
-$strS m
-}n o
-;o p
+(> ?
+)? @
+{A B
+OkC E
+=F G
+falseH M
+,M N
+msgO R
+=S T
+$strU o
+}p q
+;q r
 if 
 ( 
 usuario 
@@ -421,16 +457,18 @@ XE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarU
 )+ ,
 return- 3
 new4 7
-{8 9
-ok: <
-== >
-false? D
-,D E
-msgF I
-=J K
-$strL w
-}x y
-;y z
+(7 8
+)8 9
+{: ;
+Ok< >
+=? @
+falseA F
+,F G
+msgH K
+=L M
+$strN y
+}z {
+;{ |
 if 
 ( 
 mValidarCampos 
@@ -444,19 +482,28 @@ XE:\visual\ricardo\Backend-C#\CalendarBackend\Capa_Validacion\services\SValidarU
 ): ;
 return< B
 newC F
-{G H
-okI K
-=L M
-falseN S
-,S T
-msgU X
-=Y Z
-$str[ u
-}v w
-;w x
-return 
-null 
-; 
+(F G
+)G H
+{I J
+OkK M
+=N O
+falseP U
+,U V
+msgW Z
+=[ \
+$str] w
+}x y
+;y z
+return 
+new 
+( 
+) 
+{ 
+Ok 
+= 
+true  $
+}% &
+;& '
 } 	
 } 
 }   

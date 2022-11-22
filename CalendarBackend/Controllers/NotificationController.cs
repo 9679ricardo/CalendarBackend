@@ -7,12 +7,12 @@ namespace CalendarBackend.Controllers
 {
     public class NotificationController : Controller
     {
-        private readonly INR_Evento mEvento;
+        private readonly INrEvento mEvento;
         readonly ITokenCreate mTokenCreate;
-        private readonly INR_Notificacion mNotificacion;
+        private readonly INrNotificacion mNotificacion;
         private readonly ISendEmail mSendEmail;
 
-        public NotificationController(INR_Evento mEvento, ITokenCreate mTokenCreate, INR_Notificacion mNotificacion, ISendEmail mSendEmail)
+        public NotificationController(INrEvento mEvento, ITokenCreate mTokenCreate, INrNotificacion mNotificacion, ISendEmail mSendEmail)
         {
             this.mEvento = mEvento;
             this.mTokenCreate = mTokenCreate;

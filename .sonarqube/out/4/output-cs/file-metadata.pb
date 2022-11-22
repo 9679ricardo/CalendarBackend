@@ -3,9 +3,11 @@ ZE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\Controllers\AuthCo
 \E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\Controllers\EventoController.csutf-8c
 ZE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\Controllers\HomeController.csutf-8k
 bE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\Controllers\NotificationController.csutf-8^
+UE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\interfaces\ICOSetting.csutf-8^
 UE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\interfaces\ISendEmail.csutf-8^
 UE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\Models\ErrorViewModel.csutf-8P
 GE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\Program.csutf-8\
+SE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\services\ScoSetting.csutf-8\
 SE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\services\SSendEmail.csutf-8z
 oE:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\obj\Debug\net6.0\CalendarBackend.GlobalUsings.g.csutf-8‡
 |E:\visual\ricardo\Backend-C#\CalendarBackend\CalendarBackend\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.csutf-8x

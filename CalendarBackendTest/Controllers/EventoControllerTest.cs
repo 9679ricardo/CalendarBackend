@@ -15,7 +15,7 @@ namespace CalendarBackendTest.Controllers
         [Test]
         public async Task DebePoderDevolverUnaLista()
         {
-            var IEvento = new Mock<INR_Evento> ();
+            var IEvento = new Mock<INrEvento> ();
             var IToken = new Mock<ITokenCreate>();
             var IVent = new Mock<IValidarEvento>();
 
@@ -42,7 +42,7 @@ namespace CalendarBackendTest.Controllers
             };
 
             var events = await controller.GetAllEventosUsuario();
-            Assert.IsNotNull(events);
+            Assert.That(events, Is.Not.Null);
             var resul = events.Result as ObjectResult;
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(201));
@@ -51,7 +51,7 @@ namespace CalendarBackendTest.Controllers
         [Test]
         public async Task DebePoderRegistrarUnaNota()
         {
-            var IEvento = new Mock<INR_Evento>();
+            var IEvento = new Mock<INrEvento>();
             var IToken = new Mock<ITokenCreate>();
             var validate = new Mock<IValidarEvento>();
 
@@ -93,7 +93,7 @@ namespace CalendarBackendTest.Controllers
             };
 
             IToken.Setup(p => p.GetUser(principal.Claims)).Returns(ident);
-            IEvento.Setup(p => p.RegisterData(ident, register)).Returns(evento);
+            IEvento.Setup(p => p.RegisterDataSn(ident, register)).Returns(evento);
             validate.Setup(p => p.ValidarEvento(evento)).Returns(new Resp() { Ok = true });
             IEvento.Setup(p => p.INR_Registrar_Evento(evento)).ReturnsAsync(1);
             IEvento.Setup(p => p.INR_Registrar_Evento_Relacion(evento.Id, ident.Id_Usuario)).ReturnsAsync(1);
@@ -110,7 +110,7 @@ namespace CalendarBackendTest.Controllers
             };
 
             var events = await controller.Create(register);
-            Assert.IsNotNull(events);
+            Assert.That(events, Is.Not.Null);
             var resul = events.Result as ObjectResult;
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(201));
@@ -119,7 +119,7 @@ namespace CalendarBackendTest.Controllers
         [Test]
         public async Task DebePoderActualizarUnaNota()
         {
-            var IEvento = new Mock<INR_Evento>();
+            var IEvento = new Mock<INrEvento>();
             var IToken = new Mock<ITokenCreate>();
             var validate = new Mock<IValidarEvento>();
 
@@ -183,7 +183,7 @@ namespace CalendarBackendTest.Controllers
             };
 
             var events = await controller.Update(update);
-            Assert.IsNotNull(events);
+            Assert.That(events, Is.Not.Null);
             var resul = events.Result as ObjectResult;
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(201));
@@ -192,7 +192,7 @@ namespace CalendarBackendTest.Controllers
         [Test]
         public async Task DebePoderEliminarUnaNota()
         {
-            var IEvento = new Mock<INR_Evento>();
+            var IEvento = new Mock<INrEvento>();
             var IToken = new Mock<ITokenCreate>();
             var validate = new Mock<IValidarEvento>();
 
@@ -229,7 +229,7 @@ namespace CalendarBackendTest.Controllers
             IToken.Setup(p => p.GetUser(principal.Claims)).Returns(ident);
             validate.Setup(p => p.ValidarEventoId(1)).Returns(new Resp() { Ok = true });
             IEvento.Setup(p => p.INR_Buscar_Evento(1)).ReturnsAsync(evento);
-            IEvento.Setup(r => r.INR_Eliminar_All_Notificacion_Evento_Usuario(1)).ReturnsAsync(new Resp() { Ok = true });
+            IEvento.Setup(r => r.INR_Eliminar_Notificacion(1)).ReturnsAsync(new Resp() { Ok = true });
             IEvento.Setup(r => r.INR_Eliminar_Evento_Usuario(1)).ReturnsAsync(new Resp() { Ok = true });
             IEvento.Setup(p => p.INR_Eliminar_Evento(1, 1)).ReturnsAsync(new Resp() { Ok = true });
 
@@ -245,7 +245,7 @@ namespace CalendarBackendTest.Controllers
             };
 
             var events = await controller.Delete(1);
-            Assert.IsNotNull(events);
+            Assert.That(events, Is.Not.Null);
             var resul = events.Result as ObjectResult;
             Assert.That(resul, Is.Not.Null);
             Assert.That(resul.StatusCode, Is.EqualTo(201));
@@ -254,7 +254,7 @@ namespace CalendarBackendTest.Controllers
         [Test]
         public async Task DebePoderEliminarRelacionEvento()
         {
-            var IEvento = new Mock<INR_Evento>();
+            var IEvento = new Mock<INrEvento>();
             var IToken = new Mock<ITokenCreate>();
             var validate = new Mock<IValidarEvento>();
 
@@ -310,7 +310,7 @@ namespace CalendarBackendTest.Controllers
             };
 
             var realcionEvent = await controller.DeleteRe(relacion);
-            Assert.IsNotNull(realcionEvent);
+            Assert.That(realcionEvent, Is.Not.Null);
             var view = realcionEvent.Result as ObjectResult;
             Assert.That(view, Is.Not.Null);
             Assert.That(view.StatusCode, Is.EqualTo(201));

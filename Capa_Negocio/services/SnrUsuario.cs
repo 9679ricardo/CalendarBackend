@@ -4,18 +4,18 @@ using System.Data;
 
 namespace Capa_Negocio
 {
-    public class SNR_Usuario : INR_Usuario
+    public class SnrUsuario : INrUsuario
     {
-        private readonly IBD_Usuario mUsuario;
+        private readonly IBdUsuario mUsuario;
 
-        public SNR_Usuario(IBD_Usuario mUsuario)
+        public SnrUsuario(IBdUsuario mUsuario)
         {
             this.mUsuario = mUsuario;
         }
 
         public async Task<Resp> NR_Buscar_CorreoS(string email)
         {
-            var resp = await mUsuario.BD_Buscar_Correo(email); //debe retornar falso
+            var resp = await mUsuario.BD_Buscar_Correo(email);
 
             if (resp) return new() { Ok = false, msg = "El correo ya esta registrado" };
 

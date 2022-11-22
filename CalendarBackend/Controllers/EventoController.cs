@@ -13,9 +13,9 @@ namespace CalendarBackend.Controllers
     public class EventoController : Controller
     {
         private readonly IValidarEvento mVEvento;
-        private readonly INR_Evento mEvento;
+        private readonly INrEvento mEvento;
         readonly ITokenCreate mTokenCreate;
-        public EventoController(IValidarEvento mVEvento, INR_Evento mEvento, ITokenCreate mTokenCreate)
+        public EventoController(IValidarEvento mVEvento, INrEvento mEvento, ITokenCreate mTokenCreate)
         {
             this.mVEvento = mVEvento;
             this.mEvento = mEvento;
@@ -50,7 +50,7 @@ namespace CalendarBackend.Controllers
                 ClaimsIdent user = mTokenCreate.GetUser(identity.Claims);
                 if (user.Id_Usuario <= 0) return StatusCode(500, new { ok = false, msg = "Por favor hable con el administrador, codigo de error: cod7" });
 
-                var even = mEvento.RegisterData(user, Request);
+                var even = mEvento.RegisterDataSn(user, Request);
 
                 var validar = mVEvento.ValidarEvento(even);
                 if (!validar.Ok) return StatusCode(500, validar);
@@ -126,7 +126,7 @@ namespace CalendarBackend.Controllers
                 if (DbProducto.UserUid != user.Id_Usuario) return StatusCode(500, new { ok = false, msg = "No tiene privilegio de eliminar este evento" });
                 if (DbProducto.IdCre != user.Id_Usuario) return StatusCode(500, new { ok = false,  msg = "No tiene privilegio de eliminar este evento" });
 
-                await mEvento.INR_Eliminar_All_Notificacion_Evento_Usuario(user.Id_Usuario);
+                await mEvento.INR_Eliminar_Notificacion(user.Id_Usuario);
                 
                 var delR = await mEvento.INR_Eliminar_Evento_Usuario(Id);
                 if (!delR.Ok) return StatusCode(500, delR);

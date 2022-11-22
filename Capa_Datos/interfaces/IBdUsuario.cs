@@ -3,7 +3,7 @@ using System.Data;
 
 namespace Capa_Datos
 {
-    public interface IBD_Usuario
+    public interface IBdUsuario
     {
         Task<bool> BD_Buscar_Correo(string email);
         Task<int> BD_Registrar_Usuario(UsuarioRegister usuario);

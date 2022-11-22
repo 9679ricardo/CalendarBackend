@@ -4,11 +4,11 @@ using System.Data;
 
 namespace Capa_Negocio
 {
-    public class SNR_Notificacion : INR_Notificacion
+    public class SnrNotificacion : INrNotificacion
     {
-        private readonly IDB_Notificacion mNotificacion;
+        private readonly IDbNotificacion mNotificacion;
 
-        public SNR_Notificacion(IDB_Notificacion mNotificacion)
+        public SnrNotificacion(IDbNotificacion mNotificacion)
         {
             this.mNotificacion = mNotificacion;
         }
@@ -25,11 +25,11 @@ namespace Capa_Negocio
             return await mNotificacion.BD_Eliminar_Notificacion(Id_Not, Id_Usu);
         }
 
-        public async Task<int> NR_Registrar_Notificacion(int id_Not, List<Guests> ListGue, int id_user)
+        public async Task<int> NR_Registrar_Notificacion(int id_Not, List<Guests> ListGue, int id_Usu)
         {
             foreach(Guests guests in ListGue)
             {
-                var notification = RegistarData(id_Not, guests, id_user);
+                var notification = RegistarData(id_Not, guests, id_Usu);
                 await mNotificacion.BD_Registrar_Notificacion(notification);
             }
 
@@ -74,14 +74,14 @@ namespace Capa_Negocio
                 return list;
             }
         }
-
-        public NotificacionRegister RegistarData(int Id_Not, Guests guest, int id_user)
+        
+        private static NotificacionRegister RegistarData(int Id_Not, Guests ListGue, int id_Usu)
         {
             NotificacionRegister notification = new()
             {
                Id_Nota = Id_Not,
-               Id_Usu = guest.id,
-               Id_Cree = id_user
+               Id_Usu = ListGue.id,
+               Id_Cree = id_Usu
             };
 
             return notification;
